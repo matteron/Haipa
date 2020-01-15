@@ -79,6 +79,7 @@ exports.attrList = [
 	'version',
 	'viewBox',
 	'xmlns',
+	'fill',
 	'fill-rule',
 	'stroke-dasharray',
 	'stroke-linecap',
