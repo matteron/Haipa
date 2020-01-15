@@ -1,4 +1,4 @@
-const useSvg = false;
+const useSvg = true;
 const { svgTags, svgAttr } = useSvg ? require('./svg') : { svgTags: [], svgAttr: [] };	
 
 
