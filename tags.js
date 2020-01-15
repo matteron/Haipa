@@ -32,7 +32,7 @@ function createClosingTag(tagName) {
 }
 
 function generateTags(normal, closing) {
-	const out = { html: (a, i) => '<!DOCTYPE html>' + createTag('html')(a, i)};
+	const out = { html: (a, i) => '<!DOCTYPE html>\n' + createTag('html')(a, i)};
 	normal.forEach(t => out[t] = createTag(t));
 	closing.forEach(t => out[t] = createClosingTag(t));
 	return out;
