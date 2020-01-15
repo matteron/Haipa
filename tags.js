@@ -1,52 +1,34 @@
-// Based on MDN List
-// https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+const {tags} = require('./data');
 
-exports.tags = [
-	// Document Metadata
-	// ** Nothing here yet
-	// Sectioning Root
-	'body',
-	// Content Sectioning
-	'article',
-	'aside',
-	'footer',
-	'header',
-	'h1',
-	'h2',
-	'h3',
-	'h4',
-	'h5',
-	'h6',
-	'hgroup',
-	'main',
-	'nav',
-	'section',
-	// Text Content
-	'div',
-	'hr',
-	'li',
-	'ol',
-	'ul',
-	'p',
-	// Inline Text Semantics
-	'a',
-	'b',
-	'br',
-	'code',
-	'i',
-	'small',
-	'strong',
-	'sub',
-	'sup',
-	'u',
-	// Image and Multimedia
-	'img',
-	// Table Content
-	'table',
-	'tbody',
-	'td',
-	'tfoot',
-	'th',
-	'thead',
-	'tr'
-];
+const element = {
+	tag: '',
+	attr: [],
+	internal: [],
+	compose: function() {
+		return `<${this.tag}${this.expandAttr()}>\t${this.expandInternal()}\n</${this.tag}>`;
+	},
+	expandAttr: function() {
+		return this.properties.reduce((acc, cur) => `${acc} ${cur}`, '');
+	},
+	expandInternal: function(){
+		return this.internal.reduce((acc, cur) => `${acc}\n${typeof cur == 'string' ? cur : cur.compose()}`, '');
+	}
+};
+
+function createTag(tagName) {
+	return function(properties, internal) {
+		const base = Object.create(element);
+		base.tag = tagName;
+		base.properties = properties;
+		base.internal = internal;
+		return base.compose();
+	}
+}
+
+function generateTags(tagList) {
+	const output = {};
+	tagList.forEach(t => output[t] = createTag(t));
+	return output;
+}
+
+module.exports = generateTags(tags);
