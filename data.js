@@ -1,91 +1,83 @@
+const useSvg = false;
+const { svgTags, svgAttr } = useSvg ? require('./svg') : { svgTags: [], svgAttr: [] };	
+
+
 // Based on MDN List
 // https://developer.mozilla.org/en-US/docs/Web/HTML/Element
-
 exports.tagList = [
 	//'html', Handeled manually to prepend <!DOCTYPE html>
 	// Document Metadata
-	'head',
-	'style',
-	'title',
+	'base', 'link', 'meta', 'head', 'style', 'title', 
 	// Sectioning Root
 	'body',
 	// Content Sectioning
-	'article',
-	'aside',
-	'footer',
-	'header',
-	'h1',
-	'h2',
-	'h3',
-	'h4',
-	'h5',
-	'h6',
-	'hgroup',
-	'main',
-	'nav',
-	'section',
+	'address', 'article', 'aside', 'footer', 'header', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'hgroup', 'main', 'nav', 'section',
 	// Text Content
-	'div',
-	'hr',
-	'li',
-	'ol',
-	'ul',
-	'p',
+	'blockquote', 'dd', 'div', 'dl', 'dt', 'figcaption', 'figure', 'hr', 'li', 'ol', 'p', 'pre', 'ul',
 	// Inline Text Semantics
-	'a',
-	'b',
-	'br',
-	'code',
-	'i',
-	'small',
-	'span',
-	'strong',
-	'sub',
-	'sup',
-	'u',
+	'a', 'abbr', 'b', 'bdi', 'bdo', 'br', 'cite', 'code', 'data', 'dfn', 'em', 'i', 'kbd', 'mark', 'q','rb',
+	'rp', 'rt', 'rtc', 'ruby', 's', 'samp', 'small', 'span', 'strong', 'sub', 'sup', 'time', 'u', 'var', 'wbr',
 	// Image and Multimedia
-	'img',
+	'area', 'audio', 'img', 'map', 'track', 'video',
+	// Embedded Content
+	'embed', 'iframe', 'object', 'param', 'picture', 'source',
+	// Scripting
+	'canvas', 'noscript', 'script',
+	// Demarcating Edits
+	'del', 'ins',
 	// Table Content
-	'table',
-	'tbody',
-	'td',
-	'tfoot',
-	'th',
-	'thead',
-	'tr',
+	'caption', 'col', 'colgroup', 'table', 'tbody', 'td', 'tfoot', 'th', 'thead', 'tr',
+	// Forms
+	'button', 'datalist', 'fieldset', 'form', 'input', 'label', 'legend', 'meter', 'optgroup', 'option', 'output', 'progress', 'select', 'textarea',
+	// Interactive Elements
+	'details', 'dialog', 'menu', 'summary',
+	// Web Components
+	'slot', 'template',
 	// SVG
-	'svg',
-	'g'
-];
-
-// Self Closing Tags
-exports.closingList = [
-	'link',
-	'meta',
-	'path'
+	...svgTags
 ];
 
 exports.attrList = [
-	//'class', handled in the function as it is a reserved keyword
-	'lang',
-	'id',
-	'href',
-	'rel',
-	'as',
-	'type',
-	'name',
-	'content',
+	// A
+	'abbr', 'accept', 'acceptCharset', 'accessKey', 'action', 'allowFullScreen', 'allowTransparency', 'alt', 'async', 'autoComplete', 'autoFocus', 'autoPlay',
+	// C  NOTE: Class is replaced with classes due to name collision.
+	'cellPadding', 'cellSpacing', 'challenge', 'charset', 'checked', 'cite', 'className', 'cols', 'colSpan', 'command', 'content', 'contentEditable',
+	'contextMenu', 'controls', 'coords', 'crossOrigin',
+	// D
+	'data', 'dateTime', 'default', 'defer', 'dir', 'disabled', 'download', 'draggable', 'dropzone',
+	// E
+	'encType',
+	// F
+	'for', 'form', 'formAction', 'formEncType', 'formMethod', 'formNoValidate', 'formTarget', 'frameBorder',
+	// H
+	'headers', 'height', 'hidden', 'high', 'href', 'hrefLang', 'htmlFor', 'httpEquiv',
+	// I
+	'icon', 'id', 'inputMode', 'isMap', 'itemId', 'itemProp', 'itemRef', 'itemScope', 'itemType',
+	// K
+	'kind',
+	// L
+	'label', 'lang', 'list', 'loop',
+	// M
+	'manifest', 'max', 'maxLength', 'media', 'mediaGroup', 'method', 'min', 'minLength', 'multiple', 'muted',
+	// N
+	'name', 'noValidate',
+	// O
+	'open', 'optimum',
+	// P
+	'pattern', 'ping', 'placeholder', 'poster', 'preload',
+	// R
+	'radioGroup', 'readOnly', 'rel', 'required', 'role', 'rows', 'rowSpan',
+	// S
+	'sandbox', 'scope', 'scoped', 'scrolling', 'seamless', 'selected', 'shape', 'size', 'sizes', 'sortable', 'span', 'spellCheck', 'src', 'srcDoc', 'srcSet',
+	'start', 'step', 'style',
+	// T
+	'tabIndex', 'target', 'title', 'translate', 'type', 'typeMustMatch',
+	// U
+	'useMap',
+	// V
+	'value',
+	// W
+	'width', 'wmode', 'wrap',
 	// SVG
-	'version',
-	'viewBox',
-	'xmlns',
-	'fill',
-	'fill-rule',
-	'stroke-dasharray',
-	'stroke-linecap',
-	'stroke-opacity',
-	'transform',
-	'stroke',
-	'stroke-width',
-	'd'
+	...svgAttr
 ];

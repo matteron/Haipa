@@ -1,4 +1,4 @@
-const {tagList, closingList} = require('./data');
+const { tagList } = require('./data');
 
 class Element {
 	constructor(name, attr, internal) {
@@ -25,17 +25,10 @@ function createTag(tagName) {
 	}
 }
 
-function createClosingTag(tagName) {
-	return function(attr) {
-		return new Element(tagName, attr).compose();
-	}
-}
-
-function generateTags(normal, closing) {
+function generateTags(arr) {
 	const out = { html: (a, i) => '<!DOCTYPE html>\n' + createTag('html')(a, i)};
-	normal.forEach(t => out[t] = createTag(t));
-	closing.forEach(t => out[t] = createClosingTag(t));
+	arr.forEach(t => out[t] = createTag(t));
 	return out;
 }
 
-module.exports = generateTags(tagList, closingList);
+module.exports = generateTags(tagList);
