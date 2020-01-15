@@ -39,7 +39,7 @@ exports.tagList = [
 
 exports.attrList = [
 	// A
-	'abbr', 'accept', 'acceptCharset', 'accessKey', 'action', 'allowFullScreen', 'allowTransparency', 'alt', 'as' 'async', 'autoComplete', 'autoFocus', 'autoPlay',
+	'abbr', 'accept', 'acceptCharset', 'accessKey', 'action', 'allowFullScreen', 'allowTransparency', 'alt', 'as', 'async', 'autoComplete', 'autoFocus', 'autoPlay',
 	// C  NOTE: Class is replaced with classes due to name collision.
 	'cellPadding', 'cellSpacing', 'challenge', 'charset', 'checked', 'cite', 'className', 'cols', 'colSpan', 'command', 'content', 'contentEditable',
 	'contextMenu', 'controls', 'coords', 'crossOrigin',
