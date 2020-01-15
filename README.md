@@ -17,9 +17,8 @@ The only weird quirk is that the html `class` attribute is renamed to `classes` 
 
 Also, I tend to write the attributes as javascript tag function.  This is mainly just to seperate them visually from the actual elements, but they can be written either way.
 
-
-
 ## Example
+
 ```JavaScript
 const {div, p, h1} = require('./tags');
 const {classes} = require('./attr');
@@ -48,6 +47,8 @@ So kind of a bad example at first glance, as they're the same number of lines in
 However, if you look closer, you'll probably notice that the actual, legible Haipa code produces equivalent HTML in half the lines.  It adds up.
 
 Also, I'd argue Haipa code reads easier (at least for me).
+
+If you want a bigger example, my personal site is now using Haipa as a static site template.  You can find that [here](https://github.com/matteron/mattia.id/blob/master/src/template/template.js).
 
 ## How to Install
 All you have to do is take the three source files (`attr.js, data.js, tags.js`) into any folder and import them with node.
