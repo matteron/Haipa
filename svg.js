@@ -93,7 +93,7 @@ exports.svgAttr = [
 	'width', 'widths', 'word-spacing', 'writing-mode',
 	// X
 	'x', 'x-height', 'x1', 'x2', 'xChannelSelector', 'xlink:actuate', 'xlink:arcrole', 'xlink:href', 'xlink:role', 'xlink:show', 'xlink:title',
-	'xlink:type', 'xml:base', 'xml:lang', 'xml:space', 'xmlns'
+	'xlink:type', 'xml:base', 'xml:lang', 'xml:space', 'xmlns',
 	// Y
 	'y', 'y1', 'y2', 'yChannelSelector',
 	// Z
