@@ -1,9 +1,11 @@
 // Based on MDN List
 // https://developer.mozilla.org/en-US/docs/Web/HTML/Element
 
-exports.tags = [
+exports.tagList = [
 	// Document Metadata
-	// ** Nothing here yet
+	'head',
+	'style',
+	'title',
 	// Sectioning Root
 	'body',
 	// Content Sectioning
@@ -49,6 +51,12 @@ exports.tags = [
 	'th',
 	'thead',
 	'tr'
+];
+
+// Self Closing Tags
+exports.closingList = [
+	'link',
+	'meta'
 ];
 
 exports.attrList = [

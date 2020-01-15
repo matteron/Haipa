@@ -1,34 +1,39 @@
-const {tags} = require('./data');
+const {tagList, closingList} = require('./data');
 
-const element = {
-	tag: '',
-	attr: [],
-	internal: [],
-	compose: function() {
+class Element {
+	constructor(name, attr, internal) {
+		this.tag = name;
+		this.attr = attr;
+		this.internal = internal;
+	}
+	compose() {
 		return `<${this.tag}${this.expandAttr()}>\t${this.expandInternal()}\n</${this.tag}>`;
-	},
-	expandAttr: function() {
-		return this.properties.reduce((acc, cur) => `${acc} ${cur}`, '');
-	},
-	expandInternal: function(){
+	}
+	expandAttr() {
+		return this.attr.reduce((acc, cur) => `${acc} ${cur}`, '');
+	}
+	expandInternal(){
 		return this.internal.reduce((acc, cur) => `${acc}\n${typeof cur == 'string' ? cur : cur.compose()}`, '');
 	}
 };
 
 function createTag(tagName) {
-	return function(properties, internal) {
-		const base = Object.create(element);
-		base.tag = tagName;
-		base.properties = properties;
-		base.internal = internal;
-		return base.compose();
+	return function(attr, internal) {
+		return (new Element(tagName, attr, internal)).compose();
 	}
 }
 
-function generateTags(tagList) {
-	const output = {};
-	tagList.forEach(t => output[t] = createTag(t));
-	return output;
+function createClosingTag(tagName) {
+	return function(attr) {
+		return new Element(tagName, attr, []);
+	}
 }
 
-module.exports = generateTags(tags);
+function generateTags(normal, closing) {
+	const out = {};
+	normal.forEach(t => out[t] = createTag(t));
+	closing.forEach(t => out[t] = createClosingTag(t));
+	return out;
+}
+
+module.exports = generateTags(tagList, closingList);
