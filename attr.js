@@ -1,5 +1,11 @@
 const {attrList} = require('./data');
 
+function kebabeToCamel(s) {
+  return s.replace(/([-_][a-z])/ig, ($1) => {
+    return $1.toUpperCase().replace('-', '');
+  });
+};
+
 function createAttr(attrName) {
 	return function(prop) {
 		return `${attrName}="${prop}"`
@@ -8,7 +14,7 @@ function createAttr(attrName) {
 
 function createAttributes(arr) {
 	const out = { classes: createAttr('class') };
-	var result = arr.forEach(a => out[a] = createAttr(a));
+	var result = arr.forEach(a => out[kebabeToCamel(a)] = createAttr(a));
 	return out;
 }
 

@@ -75,7 +75,16 @@ exports.attrList = [
 	'type',
 	'name',
 	'content',
+	// SVG
 	'version',
+	'viewBox',
 	'xmlns',
-	'viewBox'
+	'fill-rule',
+	'stroke-dasharray',
+	'stroke-linecap',
+	'stroke-opacity',
+	'transform',
+	'stroke',
+	'stroke-width',
+	'd'
 ];

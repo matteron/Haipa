@@ -1,21 +1,33 @@
 # Haipa (ハイパー)
 
-Haipa is a quick little project to make writing HTML a bit quicker.
+Haipa is a quick little project to make writing HTML a bit faster and less painful.
+
 I'm sure something like this has been done before, I just couldn't find it.
 
 It's intendend to be used with my static site builder I made for my personal website.
 
-The whole thing is a little under 55 lines if you ignore the `data.js` file, which is really just a big array to hold the names of the html elements.
+The whole thing is a little under 65 lines if you ignore the `data.js` file, which is really just a big array to hold the names of the html elements.
 
 ## Syntax
 
 Haipa is just a big collection of functions which generate HTML strings.
 
+Typically the pattern for elements is `tagName([*attributes*], [*internal elements*])`
+
+The exception to that rule is self closing tags, like `link`, which only take an attribute array. ex: `link([*attributes*])`
+
+For the Attributes themselves, you 
+
 The syntax ended up being very similar to how Elm does it's templating, so if you know that, enjoy.
 
-The only weird quirk is that the html `class` attribute is renamed to `classes` as class is a reserved keyword.
+### Quirks
 
-Also, I tend to write the attributes as javascript tag function.  This is mainly just to seperate them visually from the actual elements, but they can be written either way.
+1. The `class` attribute is called using `classes`.  Class is a reserved keyword and can not be used in JavaScript.
+2. `Kebab-Case` attributes are instead written in `camelCase`.
+	EX: `stroke-width` becomes `strokeWidth`.
+3. If you want to pass variables into template strings, you must use the standard function syntax and not the tag syntax.
+	ex: ❌ `` classes`btn ${foo ? foo : bar}` ``
+	ex: ✔️ `` classes(`btn ${foo ? foo : barr}`) ``
 
 ## Example
 
@@ -46,7 +58,7 @@ So kind of a bad example at first glance, as they're the same number of lines in
 
 However, if you look closer, you'll probably notice that the actual, legible Haipa code produces equivalent HTML in half the lines.  It adds up.
 
-Also, I'd argue Haipa code reads easier (at least for me).
+I find that writing Haipa is quicker and reads easier with large documents (at least for me), even if it does seem a bit messy at first.
 
 If you want a bigger example, my personal site is now using Haipa as a static site template.  You can find that [here](https://github.com/matteron/mattia.id/blob/master/src/template/template.js).
 
@@ -58,8 +70,9 @@ Since this was designed for my static site generator, which is built around node
 I'll probably make this support normal javascript modules soon enough, it's just this whole thing was written in less than an hour.
 
 ## TODO
-- [ ] Support Every Tag (Just kinda got lazy on this)
-- [ ] Support attributes with dashes in the name
-	* For now Just pass the full thing as a string (ex: `p(['test-attr="sad"'], [...])`)
-- [ ] Maybe: Support open header tags. (Using `<link>` by itself works in the head of a page.)
-- [ ] Support ES6 Modules (Currently only support Node imports)
+- [ ] Support every element and attribute (Just kinda got lazy on this)
+- [x] Support attributes with dashes in the name
+	* ~~For now Just pass the full thing as a string (ex: `p(['test-attr="sad"'], [...])`)~~
+	* 
+- [ ] Maybe: Support open header tags. (Using `<link>` by itself works in the head of a page normally.)
+- [ ] Support ES6 Modules (Currently only support Node modules)
