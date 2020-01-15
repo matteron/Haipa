@@ -2,6 +2,7 @@
 // https://developer.mozilla.org/en-US/docs/Web/HTML/Element
 
 exports.tagList = [
+	'html',
 	// Document Metadata
 	'head',
 	'style',
@@ -37,6 +38,7 @@ exports.tagList = [
 	'code',
 	'i',
 	'small',
+	'span',
 	'strong',
 	'sub',
 	'sup',
@@ -50,17 +52,30 @@ exports.tagList = [
 	'tfoot',
 	'th',
 	'thead',
-	'tr'
+	'tr',
+	// SVG
+	'svg',
+	'g'
 ];
 
 // Self Closing Tags
 exports.closingList = [
 	'link',
-	'meta'
+	'meta',
+	'path'
 ];
 
 exports.attrList = [
 	//'class', handled in the function as it is a reserved keyword
+	'lang',
 	'id',
-	'href'
+	'href',
+	'rel',
+	'as',
+	'type',
+	'name',
+	'content',
+	'version',
+	'xmlns',
+	'viewBox'
 ];

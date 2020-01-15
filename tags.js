@@ -7,7 +7,9 @@ class Element {
 		this.internal = internal;
 	}
 	compose() {
-		return `<${this.tag}${this.expandAttr()}>\t${this.expandInternal()}\n</${this.tag}>`;
+		return this.internal
+		? `<${this.tag}${this.expandAttr()}>\t${this.expandInternal()}\n</${this.tag}>`
+		: `<${this.tag}${this.expandAttr()}/>\n`;
 	}
 	expandAttr() {
 		return this.attr.reduce((acc, cur) => `${acc} ${cur}`, '');
@@ -25,7 +27,7 @@ function createTag(tagName) {
 
 function createClosingTag(tagName) {
 	return function(attr) {
-		return new Element(tagName, attr, []);
+		return new Element(tagName, attr, []).compose();
 	}
 }
 
