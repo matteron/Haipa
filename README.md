@@ -1,5 +1,4 @@
-# Haipa
-## ハイパー
+# Haipa (ハイパー)
 
 Haipa is a quick little project to make writing HTML a bit quicker.
 I'm sure something like this has been done before, I just couldn't find it.
@@ -8,7 +7,7 @@ It's intendend to be used with my static site builder I made for my personal web
 
 The whole thing is a little under 55 lines if you ignore the `data.js` file, which is really just a big array to hold the names of the html elements.
 
-### Syntax
+## Syntax
 
 Haipa is just a big collection of functions which generate HTML strings.
 
@@ -20,7 +19,7 @@ Also, I tend to write the attributes as javascript tag function.  This is mainly
 
 
 
-### Example
+## Example
 ```
 const {div, p, h1} = require('./tags');
 const {classes} = require('./attr');
@@ -50,7 +49,7 @@ However, if you look closer, you'll probably notice that the actual, legible Hai
 
 Also, I'd argue Haipa code reads easier (at least for me).
 
-### How to Install
+## How to Install
 All you have to do is take the three source files (`attr.js, data.js, tags.js`) into any folder and import them with node.
 
 Since this was designed for my static site generator, which is built around node.js, you're going to need node installed on your machine.
