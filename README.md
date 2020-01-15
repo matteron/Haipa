@@ -20,7 +20,7 @@ Also, I tend to write the attributes as javascript tag function.  This is mainly
 
 
 ## Example
-```
+```JavaScript
 const {div, p, h1} = require('./tags');
 const {classes} = require('./attr');
 
@@ -32,7 +32,7 @@ const html =
 ```
 
 Will produce:
-```
+```HTML
 <div class="card card-ex">
 	<h1>
 		So, what do you think?
