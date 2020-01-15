@@ -27,12 +27,12 @@ function createTag(tagName) {
 
 function createClosingTag(tagName) {
 	return function(attr) {
-		return new Element(tagName, attr, []).compose();
+		return new Element(tagName, attr).compose();
 	}
 }
 
 function generateTags(normal, closing) {
-	const out = {};
+	const out = { html: (a, i) => '<!DOCTYPE html>' + createTag('html')(a, i)};
 	normal.forEach(t => out[t] = createTag(t));
 	closing.forEach(t => out[t] = createClosingTag(t));
 	return out;

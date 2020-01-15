@@ -2,7 +2,7 @@
 // https://developer.mozilla.org/en-US/docs/Web/HTML/Element
 
 exports.tagList = [
-	'html',
+	//'html', Handeled manually to prepend <!DOCTYPE html>
 	// Document Metadata
 	'head',
 	'style',
