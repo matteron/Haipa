@@ -75,7 +75,7 @@ exports.attrList = [
 	// U
 	'useMap',
 	// V
-	'value',
+	'value', 'version',
 	// W
 	'width', 'wmode', 'wrap',
 	// SVG
