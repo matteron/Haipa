@@ -56,3 +56,8 @@ Since this was designed for my static site generator, which is built around node
 
 I'll probably make this support normal javascript modules soon enough, it's just this whole thing was written in less than an hour.
 
+## TODO
+- [ ] Support Every Tag (Just kinda got lazy on this)
+- [ ] Support attributes with dashes in the name
+	* For now Just pass the full thing as a string (ex: `p(['test-attr="sad"'], [...])`)
+- [ ] Maybe: Support open header tags. (Using `<link>` by itself works in the head of a page.)
