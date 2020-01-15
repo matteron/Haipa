@@ -61,3 +61,4 @@ I'll probably make this support normal javascript modules soon enough, it's just
 - [ ] Support attributes with dashes in the name
 	* For now Just pass the full thing as a string (ex: `p(['test-attr="sad"'], [...])`)
 - [ ] Maybe: Support open header tags. (Using `<link>` by itself works in the head of a page.)
+- [ ] Support ES6 Modules (Currently only support Node imports)
