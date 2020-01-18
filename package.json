@@ -1,0 +1,26 @@
+{
+  "name": "haipa",
+  "version": "1.0.0",
+  "description": "HTML shorthand for javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matteron/Haipa.git"
+  },
+  "keywords": [
+    "html",
+    "js",
+    "javascript",
+    "strings",
+    "shorthand"
+  ],
+  "author": "Mattia Schiano",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matteron/Haipa/issues"
+  },
+  "homepage": "https://github.com/matteron/Haipa#readme"
+}

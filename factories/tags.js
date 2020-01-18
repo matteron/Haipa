@@ -1,5 +1,3 @@
-const { tagList } = require('./data');
-
 class Element {
 	constructor(name, attr, internal) {
 		this.tag = name;
@@ -31,4 +29,4 @@ function generateTags(arr) {
 	return out;
 }
 
-module.exports = generateTags(tagList);
+module.exports = (tagList) => generateTags(tagList);

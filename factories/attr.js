@@ -1,5 +1,3 @@
-const {attrList} = require('./data');
-
 function kebabeToCamel(s) {
   return s.replace(/([-_][a-z])/ig, ($1) => {
     return $1.toUpperCase().replace('-', '');
@@ -18,4 +16,4 @@ function createAttributes(arr) {
 	return out;
 }
 
-module.exports = createAttributes(attrList);
+module.exports = (attrList) => createAttributes(attrList);

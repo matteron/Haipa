@@ -27,15 +27,17 @@ The syntax ended up being very similar to how Elm does it's templating, so if yo
 2. `Kebab-Case` attributes are instead written in `camelCase`.
 	EX: `stroke-width` becomes `strokeWidth`.
 3. If you want to pass variables into template strings, you must use the standard function syntax and not the tag syntax.
+
 	ex: ❌ `` classes`btn ${foo ? foo : bar}` ``
+
 	ex: ✔️ `` classes(`btn ${foo ? foo : barr}`) ``
 
 ## Example
 
 ```JavaScript
-const {div, p, h1} = require('./tags');
-const {classes} = require('./attr');
-
+const haipa = require('haipa');
+const { div, h1, p } = haipa.tags;
+const { classes } = haipa.attr;
 const html = 
 	div([classes`card card-ex`], [
 		h1([], ['So, what do you think?']),
@@ -64,13 +66,23 @@ I find that writing Haipa is quicker and reads easier with large documents (at l
 If you want a bigger example, my personal site is now using Haipa as a static site template.  You can find that [here](https://github.com/matteron/mattia.id/blob/master/src/template/template.js).
 
 ## How to Install
-All you have to do is take the three source files (`attr.js, data.js, tags.js, svg.js`) into any folder and import them with node.
 
-If you don't plan on using svg in your site, I recomend you delete it from your folder and edit the data file accordingly.  It's a lot of extra attributes and elements that would be wasting memory.
+### NPM
 
-Since this was designed for my static site generator, which is built around node.js, you're going to need node installed on your machine.
+If you're using npm, the process is pretty easy.
 
-I'll probably make this support normal javascript modules soon enough, it's just this whole thing was written in less than an hour.
+```
+npm i haipa
+```
+
+Then just import it and select your tags and attribtues.
+```
+const haipa =  require('haipa')(useSvg);
+const { div, p, a } = haipa.tags;
+const { classes, id, href} = haipa.attr;
+```
+
+`useSvg` is a boolean, which determines whether or not haipa creates svg related tags and attributes.  If you don't plan on using any svg functionality, I recommend disabling them to save memory.
 
 ## TODO
 - [x] Support every element and attribute (Just kinda got lazy on this)
@@ -81,3 +93,4 @@ I'll probably make this support normal javascript modules soon enough, it's just
 	* See [Quirks](#quirks) to see how (Hint: it's just `camelCase`).
 - [ ] Maybe: Support open header tags. (Using `<link>` by itself works in the head of a page normally.)
 - [ ] Support ES6 Modules (Currently only support Node modules)
+- [x] NPM module
