@@ -4,7 +4,10 @@
   "description": "HTML shorthand for javascript",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run browserify; npm run tinyify",
+    "browserify": "browserify index.js --s haipa -o dist/haipa.js",
+    "tinyify": "browserify index.js --s haipa -p tinyify -o dist/haipa.min.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +25,9 @@
   "bugs": {
     "url": "https://github.com/matteron/Haipa/issues"
   },
-  "homepage": "https://github.com/matteron/Haipa#readme"
+  "homepage": "https://github.com/matteron/Haipa#readme",
+  "devDependencies": {
+    "browserify": "^16.5.0",
+    "tinyify": "^2.5.2"
+  }
 }

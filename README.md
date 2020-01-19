@@ -71,15 +71,31 @@ If you want a bigger example, my personal site is now using Haipa as a static si
 
 If you're using npm, the process is pretty easy.
 
-```
-npm i haipa
+```BASH
+npm i --save haipa
 ```
 
 Then just import it and select your tags and attribtues.
-```
+```JavaScript
 const haipa =  require('haipa')(useSvg);
 const { div, p, a } = haipa.tags;
 const { classes, id, href} = haipa.attr;
+```
+
+### Native
+
+If you're just trying to include Haipa in a script tag, add either `haipa.js` or `haipa.min.js` to your project and import them in a script tag.
+
+```HTML
+<script src="pathToHaipa/haipa.min.js"></script>
+```
+
+This will add a `haipa` variable to the global space, then you can use it like so.
+
+```Javascript
+const { tags, attr } = haipa(useSvg);
+const { div, p, a } = tags;
+const { classes, id, href} = attr;
 ```
 
 `useSvg` is a boolean, which determines whether or not haipa creates svg related tags and attributes.  If you don't plan on using any svg functionality, I recommend disabling them to save memory.
@@ -92,5 +108,5 @@ const { classes, id, href} = haipa.attr;
 		ex: `p(['test-attr="sad"'], [...])`~~
 	* See [Quirks](#quirks) to see how (Hint: it's just `camelCase`).
 - [ ] Maybe: Support open header tags. (Using `<link>` by itself works in the head of a page normally.)
-- [ ] Support ES6 Modules (Currently only support Node modules)
+- [x] Support in browser javascript (not sure why you'd want this)
 - [x] NPM module
