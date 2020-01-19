@@ -17,7 +17,7 @@ Typically the pattern for elements is `tagName([*attributes*], [*internal elemen
 To make a self closing tag, just omit the internal elements array.
 	ex: `link([]) = <link/>`
 
-For the Attributes themselves, you 
+For the Attributes themselves, the pattern is `` attrName`value` ``.
 
 The syntax ended up being very similar to how Elm does it's templating, so if you know that, enjoy.
 
