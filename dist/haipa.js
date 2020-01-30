@@ -1,10 +1,63 @@
 (function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.haipa = f()}})(function(){var define,module,exports;return (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+exports.ariaAttr = [
+	'autocomplete',
+	'checked',
+	'current',
+	'disabled',
+	'errormessage',
+	'expanded',
+	'haspopup',
+	'hidden',
+	'invalid',
+	'label',
+	'level',
+	'modal',
+	'multiline',
+	'multiselectable',
+	'orientation',
+	'placeholder',
+	'pressed',
+	'readonly',
+	'required',
+	'selected',
+	'sort',
+	'valuemax',
+	'valuemin',
+	'valuenow',
+	'valuetext',
+	'live',
+	'relevant',
+	'atomic',
+	'busy',
+	'dropeffect',
+	'dragged',
+	'activedescendant',
+	'colcount',
+	'colindex',
+	'colspan',
+	'controls',
+	'describedby',
+	'details',
+	'errormessage',
+	'flowto',
+	'labelledby',
+	'owns',
+	'posinset',
+	'rowcount',
+	'rowindex',
+	'rowspan',
+	'setsize'
+].map(a => 'aria-' + a);
+
+
+},{}],2:[function(require,module,exports){
 
 // Based on MDN List
 // https://developer.mozilla.org/en-US/docs/Web/HTML/Element
 
 module.exports = (useSvg) => {
 	const { svgTags, svgAttr } = useSvg ? require('./svg') : { svgTags: [], svgAttr: [] };	
+	const { ariaAttr } = require('./aria');
 
 	const tagList = [
 		//'html', Handeled manually to prepend <!DOCTYPE html>
@@ -81,7 +134,9 @@ module.exports = (useSvg) => {
 		// W
 		'width', 'wmode', 'wrap',
 		// SVG
-		...svgAttr
+		...svgAttr,
+		// Aria
+		...ariaAttr
 	];
 
 	return {
@@ -90,7 +145,7 @@ module.exports = (useSvg) => {
 	}
 }
 
-},{"./svg":2}],2:[function(require,module,exports){
+},{"./aria":1,"./svg":3}],3:[function(require,module,exports){
 exports.svgTags = [
 	// A
 	'a', 'animate', 'animateMotion', 'animateTransform',
@@ -192,7 +247,7 @@ exports.svgAttr = [
 	// Z
 	'z', 'zoomAndPan'
 ];
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 function kebabeToCamel(s) {
   return s.replace(/([-_][a-z])/ig, ($1) => {
     return $1.toUpperCase().replace('-', '');
@@ -212,7 +267,7 @@ function createAttributes(arr) {
 }
 
 module.exports = (attrList) => createAttributes(attrList);
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 class Element {
 	constructor(name, attr, internal) {
 		this.tag = name;
@@ -245,7 +300,7 @@ function generateTags(arr) {
 }
 
 module.exports = (tagList) => generateTags(tagList);
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 const haipa = (useSvg) => {
 	const data = require('./data/data')(useSvg);
 	return {
@@ -255,5 +310,5 @@ const haipa = (useSvg) => {
 }
 
 module.exports = haipa;
-},{"./data/data":1,"./factories/attr":3,"./factories/tags":4}]},{},[5])(5)
+},{"./data/data":2,"./factories/attr":4,"./factories/tags":5}]},{},[6])(6)
 });

@@ -4,6 +4,7 @@
 
 module.exports = (useSvg) => {
 	const { svgTags, svgAttr } = useSvg ? require('./svg') : { svgTags: [], svgAttr: [] };	
+	const { ariaAttr } = require('./aria');
 
 	const tagList = [
 		//'html', Handeled manually to prepend <!DOCTYPE html>
@@ -80,7 +81,9 @@ module.exports = (useSvg) => {
 		// W
 		'width', 'wmode', 'wrap',
 		// SVG
-		...svgAttr
+		...svgAttr,
+		// Aria
+		...ariaAttr
 	];
 
 	return {
