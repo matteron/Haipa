@@ -1,6 +1,6 @@
 {
   "name": "haipa",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "HTML shorthand for javascript",
   "main": "index.js",
   "scripts": {

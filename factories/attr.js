@@ -11,7 +11,10 @@ function createAttr(attrName) {
 }
 
 function createAttributes(arr) {
-	const out = { classes: createAttr('class') };
+	const out = { 
+		classes: createAttr('class'),
+		isFor: createAttr('for')
+ 	};
 	var result = arr.forEach(a => out[kebabeToCamel(a)] = createAttr(a));
 	return out;
 }

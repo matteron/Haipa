@@ -42,15 +42,15 @@ module.exports = (useSvg) => {
 	const attrList = [
 		// A
 		'abbr', 'accept', 'acceptCharset', 'accessKey', 'action', 'allowFullScreen', 'allowTransparency', 'alt', 'as', 'async', 'autoComplete', 'autoFocus', 'autoPlay',
-		// C  NOTE: Class is replaced with classes due to name collision.
+		// C  NOTE: 'class' is replaced with 'classes' due to name collision.
 		'cellPadding', 'cellSpacing', 'challenge', 'charset', 'checked', 'cite', 'className', 'cols', 'colSpan', 'command', 'content', 'contentEditable',
 		'contextMenu', 'controls', 'coords', 'crossOrigin',
 		// D
 		'data', 'dateTime', 'default', 'defer', 'dir', 'disabled', 'download', 'draggable', 'dropzone',
 		// E
 		'encType',
-		// F
-		'for', 'form', 'formAction', 'formEncType', 'formMethod', 'formNoValidate', 'formTarget', 'frameBorder',
+		// F  NOTE: 'for' is replaced with 'isFor' due to name collision.
+		'form', 'formAction', 'formEncType', 'formMethod', 'formNoValidate', 'formTarget', 'frameBorder',
 		// H
 		'headers', 'height', 'hidden', 'high', 'href', 'hrefLang', 'htmlFor', 'httpEquiv',
 		// I
