@@ -1,9 +1,8 @@
-const haipa = (useSvg) => {
-	const data = require('./data/data')(useSvg);
-	return {
-		tags: require('./factories/tags')(data.tags),
-		attr: require('./factories/attr')(data.attr)
-	}
+const { tagList, attrList } = require('./data/data');
+
+const haipa = {
+	tags: require('./factories/tags')(tagList),
+	attr: require('./factories/attr')(attrList)
 }
 
 module.exports = haipa;
