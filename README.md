@@ -23,7 +23,13 @@ The syntax ended up being very similar to how Elm does it's templating, so if yo
 
 ### Quirks
 
-1. The `class` attribute is called using `classes`.  Class is a reserved keyword and can not be used in JavaScript.
+1. Some functions are named differently in order to avoid name space collisions with reserved keywords.  The following table lists all of them.
+
+	| Type      | Original | Haipa   |
+	|-----------|----------|---------|
+	| Attribute | class    | classes |
+	| Attribute | for      | isFor   |
+
 2. `Kebab-Case` attributes are instead written in `camelCase`.
 	EX: `stroke-width` becomes `strokeWidth`.
 3. If you want to pass variables into template strings, you must use the standard function syntax and not the tag syntax.
@@ -77,7 +83,7 @@ npm i --save haipa
 
 Then just import it and select your tags and attribtues.
 ```JavaScript
-const haipa =  require('haipa')(useSvg);
+const haipa =  require('haipa');
 const { div, p, a } = haipa.tags;
 const { classes, id, href} = haipa.attr;
 ```
@@ -93,12 +99,21 @@ If you're just trying to include Haipa in a script tag, add either `haipa.js` or
 This will add a `haipa` variable to the global space, then you can use it like so.
 
 ```Javascript
-const { tags, attr } = haipa(useSvg);
+const { tags, attr } = haipa();
 const { div, p, a } = tags;
 const { classes, id, href} = attr;
 ```
 
-`useSvg` is a boolean, which determines whether or not haipa creates svg related tags and attributes.  If you don't plan on using any svg functionality, I recommend disabling them to save memory.
+## Changelog
+
+- 1.0.4
+	- Added global event handlers
+- 1.0.3
+	- Added custom 'isFor' attribute to avoid name space collision with reserved keyword 'for'
+- 1.0.2
+	- Added Aria Attributes
+- 1.0.1
+	- Made native imports available.
 
 ## TODO
 - [x] Support every element and attribute (Just kinda got lazy on this)
