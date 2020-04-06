@@ -99,7 +99,7 @@ If you're just trying to include Haipa in a script tag, add either `haipa.js` or
 This will add a `haipa` variable to the global space, then you can use it like so.
 
 ```Javascript
-const { tags, attr } = haipa();
+const { tags, attr } = haipa;
 const { div, p, a } = tags;
 const { classes, id, href} = attr;
 ```
