@@ -1,4 +1,4 @@
-exports.baseTags = [
+exports.tags = [
 	//'html', Handeled manually to prepend <!DOCTYPE html>
 	// Document Metadata
 	'base', 'link', 'meta', 'head', 'style', 'title', 
@@ -29,7 +29,7 @@ exports.baseTags = [
 	'slot', 'template'
 ];
 
-exports.baseAttr = [
+exports.attr = [
 	// A
 	'abbr', 'accept', 'acceptCharset', 'accessKey', 'action', 'allowFullScreen', 'allowTransparency', 'alt', 'as', 'async', 'autoComplete', 'autoFocus', 'autoPlay',
 	// C  NOTE: 'class' is replaced with 'classes' due to name collision.

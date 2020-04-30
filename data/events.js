@@ -1,4 +1,4 @@
-exports.eventAttr = [
+exports.attr = [
 	'onabort',
 	'onanimationcancel ',
 	'onanimationend ',

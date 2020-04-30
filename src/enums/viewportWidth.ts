@@ -1,0 +1,1 @@
+export type ViewportWidth = 'device-width' | number;

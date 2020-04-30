@@ -1,22 +1,22 @@
 // Based on MDN List
 // https://developer.mozilla.org/en-US/docs/Web/HTML/Element
-const { baseTags, baseAttr } = require('./base');
-const { svgTags, svgAttr } = require('./svg');	
-const { ariaAttr } = require('./aria');
-const { eventAttr } = require('./events');
+const base = require('./base');
+const svg = require('./svg');	
+const aria = require('./aria');
+const event = require('./events');
 
 exports.tagList = [
-	...baseTags,
+	...base.tags,
 	// SVG
-	...svgTags
+	...svg.tags
 ];
 
 exports.attrList = [
-	...baseAttr,
+	...base.attr,
 	// SVG
-	...svgAttr,
+	...svg.attr,
 	// Aria
-	...ariaAttr,
+	...aria.attr,
 	// Global Event Handlers
-	...eventAttr
+	...event.attr
 ];

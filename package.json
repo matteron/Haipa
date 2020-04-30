@@ -1,33 +1,28 @@
 {
   "name": "haipa",
-  "version": "1.0.4",
-  "description": "HTML shorthand for javascript",
-  "main": "index.js",
+  "version": "2.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run browserify; npm run tinyify",
-    "browserify": "browserify index.js --s haipa -o dist/haipa.js",
-    "tinyify": "browserify index.js --s haipa -p tinyify -o dist/haipa.min.js"
+    "test": "node ./test.js",
+    "build": "tsc",
+    "prepare": "npm run build",
+    "gen": "node ./generate.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/matteron/Haipa.git"
   },
-  "keywords": [
-    "html",
-    "js",
-    "javascript",
-    "strings",
-    "shorthand"
-  ],
-  "author": "Mattia Schiano",
-  "license": "MIT",
+  "keywords": [],
+  "author": "Mattia",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/matteron/Haipa/issues"
   },
   "homepage": "https://github.com/matteron/Haipa#readme",
   "devDependencies": {
-    "browserify": "^16.5.0",
-    "tinyify": "^2.5.2"
+    "clipboardy": "^2.3.0",
+    "typescript": "^3.8.3"
   }
 }

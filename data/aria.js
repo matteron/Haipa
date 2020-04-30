@@ -1,4 +1,4 @@
-exports.ariaAttr = [
+exports.attr = [
 	'autocomplete',
 	'checked',
 	'current',
@@ -37,7 +37,6 @@ exports.ariaAttr = [
 	'controls',
 	'describedby',
 	'details',
-	'errormessage',
 	'flowto',
 	'labelledby',
 	'owns',
@@ -46,5 +45,6 @@ exports.ariaAttr = [
 	'rowindex',
 	'rowspan',
 	'setsize'
-].map(a => 'aria-' + a);
+]
+.map(a => 'aria-' + a);
 

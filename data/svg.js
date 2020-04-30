@@ -1,4 +1,4 @@
-exports.svgTags = [
+exports.tags = [
 	// A
 	'a', 'animate', 'animateMotion', 'animateTransform',
 	// C
@@ -36,7 +36,7 @@ exports.svgTags = [
 	'view'
 ];
 
-exports.svgAttr = [
+exports.attr = [
 	// A
 	'accent-height', 'accumulate', 'additive', 'alignment-baseline', 'allowReorder', 'alphabetic',
 	'amplitude', 'arabic-form', 'ascent', 'attributeName', 'attributeType', 'autoReverse', 'azimuth',
@@ -72,7 +72,7 @@ exports.svgAttr = [
 	// O
 	'offset', 'opacity', 'operator', 'order', 'orient', 'orientation', 'origin', 'overflow', 'overline-position', 'overline-thickness',
 	// P
-	'panose-1', 'paint-order', 'path', 'pathLength', 'patternContentUnits', 'patternTransform', 'patternUnits', 'ping', 'pointer-events',
+	'paint-order', 'path', 'pathLength', 'patternContentUnits', 'patternTransform', 'patternUnits', 'ping', 'pointer-events',
 	'points', 'pointsAtX', 'pointsAtY', 'pointsAtZ', 'preserveAlpha', 'preserveAspectRatio', 'primitiveUnits',
 	// R
 	'r', 'radius', 'referrerPolicy', 'refX', 'refY', 'rel', 'rendering-intent', 'repeatCount', 'repeatDur', 'requiredExtensions',
@@ -92,8 +92,7 @@ exports.svgAttr = [
 	// W
 	'width', 'widths', 'word-spacing', 'writing-mode',
 	// X
-	'x', 'x-height', 'x1', 'x2', 'xChannelSelector', 'xlink:actuate', 'xlink:arcrole', 'xlink:href', 'xlink:role', 'xlink:show', 'xlink:title',
-	'xlink:type', 'xml:base', 'xml:lang', 'xml:space', 'xmlns',
+	'x', 'x-height', 'x1', 'x2', 'xChannelSelector', 'xmlns',
 	// Y
 	'y', 'y1', 'y2', 'yChannelSelector',
 	// Z
