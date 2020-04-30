@@ -70,7 +70,7 @@ For haipa 2, I've also included a few commonly used patterns when building an HT
 
 For example there is `.stylesheet(href)` which is shortcut for linking a stylesheet without having to write the typical link with attribute syntax.
 
-You can see all of the ones I've made so far [here]()
+You can see all of the ones I've made so far [here](https://github.com/matteron/Haipa/blob/master/src/extensions/components.ts)
 
 ### Txt
 In the [basic example](#Basic-Example), you will have seen use of the `.txt(string)` function.  This is how you pass plain text string to the inside of an html tag.
@@ -84,7 +84,7 @@ Finally, since I was using TypeScript for this library, I figured i'd leverage e
 
 For a very basic example, there is the `.encoding(DocumentEncoding)` attribute which takes the `DocumentEncoding` enum.
 
-All of the enums / types are available to view [here]().
+All of the enums / types are available to view [here](https://github.com/matteron/Haipa/tree/master/src/enums).
 
 ### Kebab Case
 As mentioned in the [attributes section](#Attributes), kebab case attributes such as `stroke-width` become strokeWidth.
@@ -93,7 +93,7 @@ As mentioned in the [attributes section](#Attributes), kebab case attributes suc
 
 As of version 2.0.0, Haipa has been completely rewritten, including a completely new syntax.  As I was using Haipa more and more for side projects, I quickly found a two glaring pain points I wasn't happy with.
 
-If you'd like to read the original readme from version 1, [here ya go]().
+If you'd like to read the original readme from version 1, [here ya go](https://github.com/matteron/Haipa/blob/ad2e040aa18cfc551d07fc68b8aff5199c191336/README.md).
 
 ### Problem 1. Imports
 In Haipa 1, everything was a loose function you imported by destructuring either from the base haipa import.  For example:
