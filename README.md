@@ -22,7 +22,7 @@ const temp = h().html(h()
 			)
 		)
 	)
-)
+).render()
 ```
 
 Will generate:
@@ -62,6 +62,10 @@ Attributes are simpler functions that just take strings.
 As you can see in the [basic example](#Basic-Example), calling attribute functions like 'id' on a haipa node will pass that attribute onto the parent.
 
 > It's important to note, any sort of kebab cased attribute is written in camel case.
+
+### Render
+
+Finally, call `.render()` on the outer most element to render render all the nodes to a string.
 
 ## Quirks
 
