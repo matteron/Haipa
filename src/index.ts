@@ -1,10 +1,10 @@
-import './extensions/Elements/txt';
-import './extensions/Elements/baseElements';
-import './extensions/Elements/svgElements';
-import './extensions/Attributes/baseAttributes';
-import './extensions/Attributes/ariaAttributes';
-import './extensions/Attributes/svgAttributes';
-import './extensions/Attributes/eventAttributes';
+import './extensions/elements/txt';
+import './extensions/elements/baseElements';
+import './extensions/elements/svgElements';
+import './extensions/attributes/baseAttributes';
+import './extensions/attributes/ariaAttributes';
+import './extensions/attributes/svgAttributes';
+import './extensions/attributes/eventAttributes';
 import './extensions/overlap';
 import './extensions/components';
 
