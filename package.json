@@ -4,6 +4,9 @@
   "description": "",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "test": "node ./test.js",
     "build": "tsc",
