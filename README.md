@@ -67,7 +67,14 @@ As you can see in the [basic example](#Basic-Example), calling attribute functio
 
 Finally, call `.render()` on the outer most element to render render all the nodes to a string.
 
-## Quirks
+## Quirks / Features
+
+### Txt
+In the [basic example](#Basic-Example), you will have seen use of the `.txt(string)` function.  This is how you pass plain text string to the inside of an html tag.
+
+For example: `.div(h().txt('ugly')) === <div>ugly</div>`
+
+I'm not very content with this solution, but it'll have to do for now.  The problem came about due to namespace collision.  The fact that there's both a title element and attribute means element methods can't be overloaded with string parameters.  I have considered allowing it in non-colliding elements, but I don't think it's a good idea to introduce inconsistencies like that.
 
 ### Components
 For haipa 2, I've also included a few commonly used patterns when building an HTML document.
@@ -76,12 +83,22 @@ For example there is `.stylesheet(href)` which is shortcut for linking a stylesh
 
 You can see all of the ones I've made so far [here](https://github.com/matteron/Haipa/blob/master/src/extensions/components.ts)
 
-### Txt
-In the [basic example](#Basic-Example), you will have seen use of the `.txt(string)` function.  This is how you pass plain text string to the inside of an html tag.
+### Loops
+I found that I kept making extensions to loop through lists of items, so I finally got fed up and added them to haipa.  The basic syntax is the following:
 
-For example: `.div(h().txt('ugly')) === <div>ugly</div>`
+```JavaScript
+h().forEach(array, (tag, value, index, array) => {})
+```
 
-I'm not very content with this solution, but it'll have to do for now.  The problem came about due to namespace collision.  The fact that there's both a title element and attribute means element methods can't be overloaded with string parameters.  I have considered allowing it in non-colliding elements, but I don't think it's a good idea to introduce inconsistencies like that.
+It's fairly similar to the native `Array.forEach` function, except that the first argument is the array you wish to loop through and the first parameter passed into the callback function is the tag, not the value.  The tag is the same tag which you called the `forEach` function on, so you do all your modifications on the tag.  I think a simple example explains everything far better than I can, so here ya go:
+
+```JavaScript
+h().ul(h()
+	.forEach(arr, (tag, n, i) => {
+		tag.li(h().txt(n));
+	})
+);
+```
 
 ### Enums / Types
 Finally, since I was using TypeScript for this library, I figured i'd leverage enums and custom types to aid in "type safety" so to speak.  Certain functions will take these enums instead of typical strings when using TypeScript files.  If you are using JavaScript, you can just as easily pass the string representation instead.

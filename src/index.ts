@@ -7,6 +7,7 @@ import './extensions/attributes/svgAttributes';
 import './extensions/attributes/eventAttributes';
 import './extensions/overlap';
 import './extensions/components';
+import './extensions/foreach'
 
 import { Tag } from "./tag";
 
