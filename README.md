@@ -130,9 +130,13 @@ const temp = h().html(h()
 In this example, we create a very basic html document, with a body that has the id, 'test', and an internal div child.  The order actually doesn't matter either, putting the div before the id call will still result in the same structure (Order of child tags is still preserved).  However, that's mainly an accidental result of implementation and I don't think it should typically used.
 
 ## Changelog
+`2.0.2`
+
+- Removed .npmignore
+
 `2.0.1`
 	
-	- Removed .npmignore
+	- Wasted an npm version by accidentally publishing nothing
 
 `2.0.0`
 
