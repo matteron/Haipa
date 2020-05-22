@@ -146,39 +146,6 @@ const temp = h().html(h()
 
 In this example, we create a very basic html document, with a body that has the id, 'test', and an internal div child.  The order actually doesn't matter either, putting the div before the id call will still result in the same structure (Order of child tags is still preserved).  However, that's mainly an accidental result of implementation and I don't think it should typically used.
 
-## Changelog
-`2.1.0`
-
-- Added the `.forEach` function to loop. 
-
-`2.0.2`
-
-- Removed .npmignore
-
-`2.0.1`
-	
-- Wasted an npm version by accidentally publishing nothing
-
-`2.0.0`
-
-- Complete rewrite with new, streamlined syntax.
-
-`1.0.4`
-
-- Added global event handlers
-
-`1.0.3`
-
-- ~~Added custom 'isFor' attribute to avoid name space collision with reserved keyword 'for'~~.  In haipa 2 onwards, this isn't a problem anymore, for can be used.
-
-`1.0.2`
-
-- Added Aria Attributes
-
-`1.0.1`
-
-- Made native imports available.
-
 ## TODO
 - [ ] Handle boolean attributes correctly (disabled, etc)
 - [ ] Add enums / correct types for everything to match html spec (big for svg)

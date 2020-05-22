@@ -8,7 +8,7 @@ declare module '../tag' {
         stylesheet(file: string): Tag;
         encoding(encoding?: DocumentEncoding): Tag;
         viewport(width?: ViewportWidth, initialScale?: number): Tag;
-        // font(path: string): Tag;
+        font(path: string): Tag;
 	}
 }
 
@@ -33,10 +33,13 @@ Tag.prototype.viewport = function(width: ViewportWidth = 'device-width', initial
     )
 }
 
-// Tag.prototype.font = function(path: string): Tag {
-//     return this.link(h()
-//         .rel('preload')
-//         .as('font')
-//         .type(``)
-//     );
-// }
+// Setups font to preload 
+Tag.prototype.font = function(path: string): Tag {
+    return this.link(h()
+		.rel('preload')
+		.as('font')
+		.type(`font/${path.split('.').pop()}`)
+		.href(path)
+		.crossOrigin('true')
+	);
+}
