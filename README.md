@@ -1,10 +1,10 @@
 # Haipa (ハイパー)
 
-Haipa is a quick little project to make writing HTML a bit faster and less painful.
+Haipa is a quick little project to make writing HTML templates a bit faster and less painful.
 
 I'm sure something like this has been done before, I just couldn't find it.
 
-It's intended to be used with my static site builder I made for my personal website, not at all to be used in live DOM operations.
+It's designed to be used with with static site generators, not at all to be used in live DOM operations.  Please do not try and use this for live DOM operations and then complain it does a bad job at that.
 
 ## Syntax 
 Note: Haipa syntax is very different now in version 2, if you somehow were using haipa for anything (why?), be aware of this.  You can read about it [below](#Complete-Rewrite).
@@ -43,7 +43,7 @@ Will generate:
 </html>
 ```
 
-Haipa is just a big collection of functions with generate HTML strings.  You always start by calling the main haipa function 'h' to generate a new node.  You call all your related functions on it to start building out the tree.  
+Haipa is just a big collection of functions that generate HTML strings.  You always start by calling the main haipa function 'h' to generate a new node.  You call all your related functions on it to start building out the tree.  
 
 There's two types of basic functions, an element, and an attribute.
 
