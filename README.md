@@ -13,13 +13,14 @@ Note: Haipa syntax is very different now in version 2, if you somehow were using
 ```JavaScript
 const temp = h().html(h()
 	.head(h()
-		.title(h().txt('Hello World'))
+		.title(h('Hello World'))
 	)
 	.body(h()
-	.header(h().id('header-id')
-			.h1(h().id('h1-id')
-				.txt('Hello World')
+		.header(h().id('header-id')
+			.h1(h('Hello World')
+				.id('h1-id')
 			)
+			.txt('This comes after the h1 tag')
 		)
 	)
 ).render()
@@ -36,6 +37,7 @@ Will generate:
 	<body>
 		<header id="header-id">
 			<h1 id="h1-id">Hello World</h1>
+			This comes after the h1 tag
 		</header>
 	</body>
 </html>
@@ -69,12 +71,37 @@ Finally, call `.render()` on the outer most element to render render all the nod
 
 ## Quirks / Features
 
-### Txt
-In the [basic example](#Basic-Example), you will have seen use of the `.txt(string)` function.  This is how you pass plain text string to the inside of an html tag.
+### Txt / Inner Text
+In the [basic example](#Basic-Example), strings were passed into the `h()` function calls inside tags in order to set the inner text of the elements.  This will set the inner text before every other tag, so if you'd like to compose plain text after other tags, use the `.txt()` call.
 
-For example: `.div(h().txt('ugly')) === <div>ugly</div>`
+To illustrate this example:
+```JavaScript
+const textBefore = h().div(h()
+	.p(h('Inner Text')
+		.b('Bold Text')
+	)
+);
 
-I'm not very content with this solution, but it'll have to do for now.  The problem came about due to namespace collision.  The fact that there's both a title element and attribute means element methods can't be overloaded with string parameters.  I have considered allowing it in non-colliding elements, but I don't think it's a good idea to introduce inconsistencies like that.
+const textAfter = h().div(h()
+	.p(h()
+		.b('Bold Text')
+		.txt('Inner Text')
+	)
+);
+```
+
+Produces the following:
+```HTML
+	<!-- Text Before -->
+	<div>
+		<p>Inner Text<b>Bold Text</b></p>
+	</div>
+
+	<!-- Text After -->
+	<div>
+		<p><b>Bold Text</b>Inner Text</p>
+	</div>
+```
 
 ### Components
 For haipa 2, I've also included a few commonly used patterns when building an HTML document.
@@ -151,5 +178,5 @@ In this example, we create a very basic html document, with a body that has the 
 - [ ] Add enums / correct types for everything to match html spec (big for svg)
 - [ ] Add more components for common situations.
 - [ ] Correctly space the resulting string with tabs.
-- [ ] I might switch text only elements to taking strings directly instead of having to call `.txt()`.  (Ex: p, b)
+- [x] ~~I might switch text only elements to taking strings directly instead of having to call `.txt()`.  (Ex: p, b)~~ Passing a string into a `h()` call will make it call `.txt()` on itself.
 - [ ] Figure out how to move all the aria attributes into an aria sub property to keep things clean.

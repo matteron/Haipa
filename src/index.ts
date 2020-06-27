@@ -11,4 +11,5 @@ import './extensions/foreach'
 
 import { Tag } from "./tag";
 
-export const h = () => new Tag();
+export const h = (innerText?: string) =>
+	innerText ? new Tag().txt(innerText) : new Tag();

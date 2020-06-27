@@ -1,4 +1,8 @@
 ## Changelog
+`2.2.0`
+
+- Passing strings into `h()` will call `.txt` on it.  Makes it easier to pass inner text.
+
 `2.1.1`
 
 - Added a `.font` component to easily include a preloaded font
