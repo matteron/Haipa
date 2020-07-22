@@ -1,5 +1,6 @@
 import { Tag } from '../../tag';
-import { DocumentEncoding } from '../../enums/documentEncoding';
+import { DocumentEncoding } from '../../types/document-encoding.type';
+import { Language } from '../../types/language.type';
 
 declare module '../../tag' {
 	export interface Tag {
@@ -52,7 +53,7 @@ declare module '../../tag' {
 		hidden(value: string): Tag;
 		high(value: string): Tag;
 		href(value: string): Tag;
-		hrefLang(value: string): Tag;
+		hrefLang(value: Language): Tag;
 		htmlFor(value: string): Tag;
 		httpEquiv(value: string): Tag;
 		icon(value: string): Tag;
@@ -65,7 +66,7 @@ declare module '../../tag' {
 		itemScope(value: string): Tag;
 		itemType(value: string): Tag;
 		kind(value: string): Tag;
-		lang(value: string): Tag;
+		lang(value: Language): Tag;
 		list(value: string): Tag;
 		loop(value: string): Tag;
 		manifest(value: string): Tag;
@@ -172,7 +173,7 @@ Tag.prototype.height = function(value: string): Tag { return this.attribute('hei
 Tag.prototype.hidden = function(value: string): Tag { return this.attribute('hidden', value); }
 Tag.prototype.high = function(value: string): Tag { return this.attribute('high', value); }
 Tag.prototype.href = function(value: string): Tag { return this.attribute('href', value); }
-Tag.prototype.hrefLang = function(value: string): Tag { return this.attribute('hrefLang', value); }
+Tag.prototype.hrefLang = function(value: Language): Tag { return this.attribute('hrefLang', value); }
 Tag.prototype.htmlFor = function(value: string): Tag { return this.attribute('htmlFor', value); }
 Tag.prototype.httpEquiv = function(value: string): Tag { return this.attribute('httpEquiv', value); }
 Tag.prototype.icon = function(value: string): Tag { return this.attribute('icon', value); }
@@ -185,7 +186,7 @@ Tag.prototype.itemRef = function(value: string): Tag { return this.attribute('it
 Tag.prototype.itemScope = function(value: string): Tag { return this.attribute('itemScope', value); }
 Tag.prototype.itemType = function(value: string): Tag { return this.attribute('itemType', value); }
 Tag.prototype.kind = function(value: string): Tag { return this.attribute('kind', value); }
-Tag.prototype.lang = function(value: string): Tag { return this.attribute('lang', value); }
+Tag.prototype.lang = function(value: Language): Tag { return this.attribute('lang', value); }
 Tag.prototype.list = function(value: string): Tag { return this.attribute('list', value); }
 Tag.prototype.loop = function(value: string): Tag { return this.attribute('loop', value); }
 Tag.prototype.manifest = function(value: string): Tag { return this.attribute('manifest', value); }

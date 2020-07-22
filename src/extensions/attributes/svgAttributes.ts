@@ -1,4 +1,5 @@
 import { Tag } from '../../tag';
+import { Language } from '../../types/language.type';
 
 declare module '../../tag' {
 	export interface Tag {
@@ -85,7 +86,7 @@ declare module '../../tag' {
 		hanging(value: string): Tag;
 		height(value: string): Tag;
 		href(value: string): Tag;
-		hreflang(value: string): Tag;
+		hreflang(value: Language): Tag;
 		horizAdvX(value: string): Tag;
 		horizOriginX(value: string): Tag;
 		id(value: string): Tag;
@@ -105,7 +106,7 @@ declare module '../../tag' {
 		keyPoints(value: string): Tag;
 		keySplines(value: string): Tag;
 		keyTimes(value: string): Tag;
-		lang(value: string): Tag;
+		lang(value: Language): Tag;
 		lengthAdjust(value: string): Tag;
 		letterSpacing(value: string): Tag;
 		lightingColor(value: string): Tag;
@@ -196,7 +197,7 @@ declare module '../../tag' {
 		strokeOpacity(value: string): Tag;
 		strokeWidth(value: string): Tag;
 		surfaceScale(value: string): Tag;
-		systemLanguage(value: string): Tag;
+		systemLanguage(value: Language): Tag;
 		tabindex(value: string): Tag;
 		tableValues(value: string): Tag;
 		target(value: string): Tag;
@@ -332,7 +333,7 @@ Tag.prototype.gradientUnits = function(value: string): Tag { return this.attribu
 Tag.prototype.hanging = function(value: string): Tag { return this.attribute('hanging', value); }
 Tag.prototype.height = function(value: string): Tag { return this.attribute('height', value); }
 Tag.prototype.href = function(value: string): Tag { return this.attribute('href', value); }
-Tag.prototype.hreflang = function(value: string): Tag { return this.attribute('hreflang', value); }
+Tag.prototype.hreflang = function(value: Language): Tag { return this.attribute('hreflang', value); }
 Tag.prototype.horizAdvX = function(value: string): Tag { return this.attribute('horiz-adv-x', value); }
 Tag.prototype.horizOriginX = function(value: string): Tag { return this.attribute('horiz-origin-x', value); }
 Tag.prototype.id = function(value: string): Tag { return this.attribute('id', value); }
@@ -352,7 +353,7 @@ Tag.prototype.kerning = function(value: string): Tag { return this.attribute('ke
 Tag.prototype.keyPoints = function(value: string): Tag { return this.attribute('keyPoints', value); }
 Tag.prototype.keySplines = function(value: string): Tag { return this.attribute('keySplines', value); }
 Tag.prototype.keyTimes = function(value: string): Tag { return this.attribute('keyTimes', value); }
-Tag.prototype.lang = function(value: string): Tag { return this.attribute('lang', value); }
+Tag.prototype.lang = function(value: Language): Tag { return this.attribute('lang', value); }
 Tag.prototype.lengthAdjust = function(value: string): Tag { return this.attribute('lengthAdjust', value); }
 Tag.prototype.letterSpacing = function(value: string): Tag { return this.attribute('letter-spacing', value); }
 Tag.prototype.lightingColor = function(value: string): Tag { return this.attribute('lighting-color', value); }
@@ -442,7 +443,7 @@ Tag.prototype.strokeMiterlimit = function(value: string): Tag { return this.attr
 Tag.prototype.strokeOpacity = function(value: string): Tag { return this.attribute('stroke-opacity', value); }
 Tag.prototype.strokeWidth = function(value: string): Tag { return this.attribute('stroke-width', value); }
 Tag.prototype.surfaceScale = function(value: string): Tag { return this.attribute('surfaceScale', value); }
-Tag.prototype.systemLanguage = function(value: string): Tag { return this.attribute('systemLanguage', value); }
+Tag.prototype.systemLanguage = function(value: Language): Tag { return this.attribute('systemLanguage', value); }
 Tag.prototype.tabindex = function(value: string): Tag { return this.attribute('tabindex', value); }
 Tag.prototype.tableValues = function(value: string): Tag { return this.attribute('tableValues', value); }
 Tag.prototype.target = function(value: string): Tag { return this.attribute('target', value); }

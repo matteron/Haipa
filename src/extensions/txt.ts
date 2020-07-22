@@ -1,6 +1,6 @@
-import { Tag } from '../../tag';
+import { Tag } from '../tag';
 
-declare module '../../tag' {
+declare module '../tag' {
 	export interface Tag {
 		txt(value: string): Tag;
 	}

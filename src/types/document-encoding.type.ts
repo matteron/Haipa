@@ -1,0 +1,1 @@
+export type DocumentEncoding = 'utf-8' | string;

@@ -1,7 +1,7 @@
 import { Tag } from '../tag';
 import { h } from '../index';
-import { DocumentEncoding } from '../enums/documentEncoding';
-import { ViewportWidth } from '../enums/viewportWidth';
+import { DocumentEncoding } from '../types/document-encoding.type';
+import { ViewportWidth } from '../types/viewport-width.type';
 
 declare module '../tag' {
 	export interface Tag {
@@ -9,6 +9,9 @@ declare module '../tag' {
         encoding(encoding?: DocumentEncoding): Tag;
         viewport(width?: ViewportWidth, initialScale?: number): Tag;
         font(path: string): Tag;
+        socialTitle(value: string): Tag;
+        description(text: string): Tag;
+        socialDescription(text: string): Tag;
 	}
 }
 
@@ -20,7 +23,7 @@ Tag.prototype.stylesheet = function(file: string): Tag {
     );
 };
 
-Tag.prototype.encoding = function(encoding: DocumentEncoding = DocumentEncoding.utf8): Tag {
+Tag.prototype.encoding = function(encoding: DocumentEncoding = 'utf-8'): Tag {
     return this.meta(h()
         .charset(encoding)
     );
@@ -42,4 +45,18 @@ Tag.prototype.font = function(path: string): Tag {
 		.href(path)
 		.crossOrigin('true')
 	);
+}
+
+Tag.prototype.socialTitle = function(value: string): Tag {
+    return this.meta(h().name('twitter:title').content(value))
+        .meta(h().name('og:title').content(value));
+}
+
+Tag.prototype.description = function(text: string): Tag {
+    return this.meta(h().name('description').content(text));
+}
+
+Tag.prototype.socialDescription = function(text: string): Tag {
+    return this.meta(h().name('twitter:description').content(text))
+        .meta(h().name('og:description').content(text));
 }

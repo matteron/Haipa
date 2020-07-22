@@ -1,4 +1,10 @@
 ## Changelog
+`2.2.5`
+
+- Added an if function for conditional rendering.
+- Added Language type for strongly typed lang attributes.
+- Added description, social title and description components.
+
 `2.2.0`
 
 - Passing strings into `h()` will call `.txt` on it.  Makes it easier to pass inner text.
