@@ -1,57 +1,10 @@
 import { HaipaNode } from "../main/node";
 import { ElementModel, AttributeModel } from "../main/haipa.model";
+import { HaipaExtensionContainer } from "./extension.type";
 
-export function Element(selfClosing?: boolean) {
-	const ctr: (new () => HaipaNode) = HaipaNode;
-	return function(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
-		ctr.prototype[propertyKey] = function(content?: HaipaNode): HaipaNode {
-			const element: ElementModel = {
-				name: propertyKey,
-				content,
-				selfClosing
-			}
-			return this.element(element);
-		}
-	}
-}
-
-export function Attribute(key?: string) {
-	const ctr: (new () => HaipaNode) = HaipaNode;
-	return function(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
-		ctr.prototype[propertyKey] = function(value: string | boolean): HaipaNode {
-			const attribute: AttributeModel = {
-				name: (key ? key : propertyKey),
-				value: value
-			}
-			return this.attribute(attribute);
-		}
-	}
-}
-
-export function Overlap(key?: string, selfClosing?: boolean) {
-	const ctr: (new () => HaipaNode) = HaipaNode;
-	return function(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
-		ctr.prototype[propertyKey] = function(value: string | boolean | HaipaNode): HaipaNode {
-			if (typeof value === 'boolean' || typeof value === 'string') {
-				const attribute: AttributeModel = {
-					name: (key ? key : propertyKey),
-					value
-				};
-				return this.attribute(attribute);
-			} else {
-				const element: ElementModel = {
-					name: propertyKey,
-					content: value as HaipaNode,
-					selfClosing
-				};
-				return this.element(element);
-			}
-		}
-	}
-}
+const ctr: (new () => HaipaNode) = HaipaNode;
 
 export function HaipaExtension() {
-	const ctr: (new () => HaipaNode) = HaipaNode;
     return function (target: any, propertyKey: string, descriptor: PropertyDescriptor) {
       const originalFunction = descriptor.value as Function;
 
@@ -59,4 +12,65 @@ export function HaipaExtension() {
         return originalFunction(this, ...args);
       }
     }
+}
+
+function kebabToCamel(s: string) {
+	return s.replace(/([-_][a-z])/ig, ($1) => {
+		return $1.toUpperCase().replace('-', '');
+	});
+};
+
+function extendElements(set: string[], selfClosing?: boolean) {
+	set.forEach(e => {
+		ctr.prototype[kebabToCamel(e)] = function(content?: HaipaNode): HaipaNode {
+			const element: ElementModel = {
+				name: e,
+				content,
+				selfClosing
+			}
+			return this.element(element);
+		}
+	});
+}
+
+function extendAttributes(set: string[]) {
+	set.forEach(e => {
+		ctr.prototype[kebabToCamel(e)] = function(value: string | boolean): HaipaNode {
+			const attribute: AttributeModel = {
+				name: e,
+				value
+			}
+			return this.attribute(attribute);
+		}
+	});
+}
+
+function extendOverlapping(set: string[]) {
+	set.forEach(e => {
+		ctr.prototype[kebabToCamel(e)] = function(value: string | boolean | HaipaNode): HaipaNode {
+			if (typeof value === 'boolean' || typeof value === 'string') {
+				const attribute: AttributeModel = {
+					name: e,
+					value
+				};
+				return this.attribute(attribute);
+			} else {
+				const element: ElementModel = {
+					name: kebabToCamel(e),
+					content: value as HaipaNode,
+				};
+				return this.element(element);
+			}
+		}
+	});
+}
+
+export function ExtendHaipa() {
+	
+	return function(target: HaipaExtensionContainer) {
+		extendElements(target?.elements ?? []);
+		extendElements(target?.selfClosingElements ?? [], true);
+		extendAttributes(target?.attributes ?? []);
+		extendOverlapping(target?.overlap ?? []);
+	}
 }

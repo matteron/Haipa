@@ -1,4 +1,16 @@
 ## Changelog
+
+`3.0.0`
+
+- Another full rewrite.
+	- Package size is almost halved.
+	- 2.X syntax is compatible, except for extensions. Minimal change require to port extensions.
+	- Logic is a lot simpler and more straight forward. (No more bugs)
+- New `@HaipaExtension()` decorator for typescript users.  Simplifies syntax to create extensions.
+- New link type for use with the `rel` attribute.
+- Fixed bug where the outermost node would only output render the last element.
+- Extensions should now be made against `HaipaNode` type instead of `Tag`.
+
 `2.2.5`
 
 - Added an if function for conditional rendering.

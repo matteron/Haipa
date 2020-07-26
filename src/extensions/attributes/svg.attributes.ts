@@ -1,5 +1,4 @@
 import { HaipaAttribute } from '../extension.type';
-import { Attribute } from '../extension.decorator';
 import { LanguageAttribute } from '../../types/language.type';
 
 declare module '../../main/node' {
@@ -247,245 +246,245 @@ declare module '../../main/node' {
 	}
 }
 
-class SvgAttributes {
-	@Attribute('accent-height') accentHeight() {}
-	@Attribute() accumulate() {}
-	@Attribute() additive() {}
-	@Attribute('alignment-baseline') alignmentBaseline() {}
-	@Attribute() allowReorder() {}
-	@Attribute() alphabetic() {}
-	@Attribute() amplitude() {}
-	@Attribute('arabic-form') arabicForm() {}
-	@Attribute() ascent() {}
-	@Attribute() attributeName() {}
-	@Attribute() attributeType() {}
-	@Attribute() autoReverse() {}
-	@Attribute() azimuth() {}
-	@Attribute() baseFrequency() {}
-	@Attribute('baseline-shift') baselineShift() {}
-	@Attribute() baseProfile() {}
-	@Attribute() bbox() {}
-	@Attribute() begin() {}
-	@Attribute() bias() {}
-	@Attribute() by() {}
-	@Attribute() calcMode() {}
-	@Attribute('cap-height') capHeight() {}
-	@Attribute() class() {}
-	@Attribute() clip() {}
-	@Attribute() clipPathUnits() {}
-	@Attribute('clip-rule') clipRule() {}
-	@Attribute() color() {}
-	@Attribute('color-interpolation') colorInterpolation() {}
-	@Attribute('color-interpolation-filters') colorInterpolationFilters() {}
-	@Attribute('color-profile') colorProfile() {}
-	@Attribute('color-rendering') colorRendering() {}
-	@Attribute() contentScriptType() {}
-	@Attribute() contentStyleType() {}
-	@Attribute() cursor() {}
-	@Attribute() cx() {}
-	@Attribute() cy() {}
-	@Attribute() d() {}
-	@Attribute() decelerate() {}
-	@Attribute() descent() {}
-	@Attribute() diffuseConstant() {}
-	@Attribute() direction() {}
-	@Attribute() display() {}
-	@Attribute() divisor() {}
-	@Attribute('dominant-baseline') dominantBaseline() {}
-	@Attribute() dur() {}
-	@Attribute() dx() {}
-	@Attribute() dy() {}
-	@Attribute() edgeMode() {}
-	@Attribute() elevation() {}
-	@Attribute('enable-background') enableBackground() {}
-	@Attribute() end() {}
-	@Attribute() exponent() {}
-	@Attribute() externalResourcesRequired() {}
-	@Attribute() fill() {}
-	@Attribute('fill-opacity') fillOpacity() {}
-	@Attribute('fill-rule') fillRule() {}
-	@Attribute() filterRes() {}
-	@Attribute() filterUnits() {}
-	@Attribute('flood-color') floodColor() {}
-	@Attribute('flood-opacity') floodOpacity() {}
-	@Attribute('font-family') fontFamily() {}
-	@Attribute('font-size') fontSize() {}
-	@Attribute('font-size-adjust') fontSizeAdjust() {}
-	@Attribute('font-stretch') fontStretch() {}
-	@Attribute('font-style') fontStyle() {}
-	@Attribute('font-variant') fontVariant() {}
-	@Attribute('font-weight') fontWeight() {}
-	@Attribute() format() {}
-	@Attribute() from() {}
-	@Attribute() fr() {}
-	@Attribute() fx() {}
-	@Attribute() fy() {}
-	@Attribute() g1() {}
-	@Attribute() g2() {}
-	@Attribute('glyph-name') glyphName() {}
-	@Attribute('glyph-orientation-horizontal') glyphOrientationHorizontal() {}
-	@Attribute('glyph-orientation-vertical') glyphOrientationVertical() {}
-	@Attribute() glyphRef() {}
-	@Attribute() gradientTransform() {}
-	@Attribute() gradientUnits() {}
-	@Attribute() hanging() {}
-	@Attribute() height() {}
-	@Attribute() href() {}
-	@Attribute('horiz-adv-x') horizAdvX() {}
-	@Attribute('horiz-origin-x') horizOriginX() {}
-	@Attribute() id() {}
-	@Attribute() ideographic() {}
-	@Attribute('image-rendering') imageRendering() {}
-	@Attribute() in() {}
-	@Attribute() in2() {}
-	@Attribute() intercept() {}
-	@Attribute() k() {}
-	@Attribute() k1() {}
-	@Attribute() k2() {}
-	@Attribute() k3() {}
-	@Attribute() k4() {}
-	@Attribute() kernelMatrix() {}
-	@Attribute() kernelUnitLength() {}
-	@Attribute() kerning() {}
-	@Attribute() keyPoints() {}
-	@Attribute() keySplines() {}
-	@Attribute() keyTimes() {}
-	@Attribute() lengthAdjust() {}
-	@Attribute('letter-spacing') letterSpacing() {}
-	@Attribute('lighting-color') lightingColor() {}
-	@Attribute() limitingConeAngle() {}
-	@Attribute() local() {}
-	@Attribute('marker-end') markerEnd() {}
-	@Attribute('marker-mid') markerMid() {}
-	@Attribute('marker-start') markerStart() {}
-	@Attribute() markerHeight() {}
-	@Attribute() markerUnits() {}
-	@Attribute() markerWidth() {}
-	@Attribute() maskContentUnits() {}
-	@Attribute() maskUnits() {}
-	@Attribute() mathematical() {}
-	@Attribute() max() {}
-	@Attribute() media() {}
-	@Attribute() method() {}
-	@Attribute() min() {}
-	@Attribute() mode() {}
-	@Attribute() name() {}
-	@Attribute() numOctaves() {}
-	@Attribute() offset() {}
-	@Attribute() opacity() {}
-	@Attribute() operator() {}
-	@Attribute() order() {}
-	@Attribute() orient() {}
-	@Attribute() orientation() {}
-	@Attribute() origin() {}
-	@Attribute() overflow() {}
-	@Attribute('overline-position') overlinePosition() {}
-	@Attribute('overline-thickness') overlineThickness() {}
-	@Attribute('paint-order') paintOrder() {}
-	@Attribute() pathLength() {}
-	@Attribute() patternContentUnits() {}
-	@Attribute() patternTransform() {}
-	@Attribute() patternUnits() {}
-	@Attribute() ping() {}
-	@Attribute('pointer-events') pointerEvents() {}
-	@Attribute() points() {}
-	@Attribute() pointsAtX() {}
-	@Attribute() pointsAtY() {}
-	@Attribute() pointsAtZ() {}
-	@Attribute() preserveAlpha() {}
-	@Attribute() preserveAspectRatio() {}
-	@Attribute() primitiveUnits() {}
-	@Attribute() r() {}
-	@Attribute() radius() {}
-	@Attribute() referrerPolicy() {}
-	@Attribute() refX() {}
-	@Attribute() refY() {}
-	@Attribute('rendering-intent') renderingIntent() {}
-	@Attribute() repeatCount() {}
-	@Attribute() repeatDur() {}
-	@Attribute() requiredExtensions() {}
-	@Attribute() requiredFeatures() {}
-	@Attribute() restart() {}
-	@Attribute() result() {}
-	@Attribute() rotate() {}
-	@Attribute() rx() {}
-	@Attribute() ry() {}
-	@Attribute() scale() {}
-	@Attribute() seed() {}
-	@Attribute('shape-rendering') shapeRendering() {}
-	@Attribute() slope() {}
-	@Attribute() spacing() {}
-	@Attribute() specularConstant() {}
-	@Attribute() specularExponent() {}
-	@Attribute() speed() {}
-	@Attribute() spreadMethod() {}
-	@Attribute() startOffset() {}
-	@Attribute() stdDeviation() {}
-	@Attribute() stemh() {}
-	@Attribute() stemv() {}
-	@Attribute() stitchTiles() {}
-	@Attribute('stop-color') stopColor() {}
-	@Attribute('stop-opacity') stopOpacity() {}
-	@Attribute('strikethrough-position') strikethroughPosition() {}
-	@Attribute('strikethrough-thickness') strikethroughThickness() {}
-	@Attribute() string() {}
-	@Attribute() stroke() {}
-	@Attribute('stroke-dasharray') strokeDasharray() {}
-	@Attribute('stroke-dashoffset') strokeDashoffset() {}
-	@Attribute('stroke-linecap') strokeLinecap() {}
-	@Attribute('stroke-linejoin') strokeLinejoin() {}
-	@Attribute('stroke-miterlimit') strokeMiterlimit() {}
-	@Attribute('stroke-opacity') strokeOpacity() {}
-	@Attribute('stroke-width') strokeWidth() {}
-	@Attribute() surfaceScale() {}
-	@Attribute() systemLanguage() {}
-	@Attribute() tabindex() {}
-	@Attribute() tableValues() {}
-	@Attribute() target() {}
-	@Attribute() targetX() {}
-	@Attribute() targetY() {}
-	@Attribute('text-anchor') textAnchor() {}
-	@Attribute('text-decoration') textDecoration() {}
-	@Attribute('text-rendering') textRendering() {}
-	@Attribute() textLength() {}
-	@Attribute() to() {}
-	@Attribute() transform() {}
-	@Attribute() type() {}
-	@Attribute() u1() {}
-	@Attribute() u2() {}
-	@Attribute('underline-position') underlinePosition() {}
-	@Attribute('underline-thickness') underlineThickness() {}
-	@Attribute() unicode() {}
-	@Attribute('unicode-bidi') unicodeBidi() {}
-	@Attribute('unicode-range') unicodeRange() {}
-	@Attribute('units-per-em') unitsPerEm() {}
-	@Attribute('v-alphabetic') vAlphabetic() {}
-	@Attribute('v-hanging') vHanging() {}
-	@Attribute('v-ideographic') vIdeographic() {}
-	@Attribute('v-mathematical') vMathematical() {}
-	@Attribute() values() {}
-	@Attribute('vector-effect') vectorEffect() {}
-	@Attribute() version() {}
-	@Attribute('vert-adv-y') vertAdvY() {}
-	@Attribute('vert-origin-x') vertOriginX() {}
-	@Attribute('vert-origin-y') vertOriginY() {}
-	@Attribute() viewBox() {}
-	@Attribute() viewTarget() {}
-	@Attribute() visibility() {}
-	@Attribute() width() {}
-	@Attribute() widths() {}
-	@Attribute('word-spacing') wordSpacing() {}
-	@Attribute('writing-mode') writingMode() {}
-	@Attribute() x() {}
-	@Attribute('x-height') xHeight() {}
-	@Attribute() x1() {}
-	@Attribute() x2() {}
-	@Attribute() xChannelSelector() {}
-	@Attribute() xmlns() {}
-	@Attribute() y() {}
-	@Attribute() y1() {}
-	@Attribute() y2() {}
-	@Attribute() yChannelSelector() {}
-	@Attribute() z() {}
-	@Attribute() zoomAndPan() {}
-}
+export const svgAttributes = [
+	'accent-height',
+	'accumulate',
+	'additive',
+	'alignment-baseline',
+	'allowReorder',
+	'alphabetic',
+	'amplitude',
+	'arabic-form',
+	'ascent',
+	'attributeName',
+	'attributeType',
+	'autoReverse',
+	'azimuth',
+	'baseFrequency',
+	'baseline-shift',
+	'baseProfile',
+	'bbox',
+	'begin',
+	'bias',
+	'by',
+	'calcMode',
+	'cap-height',
+	'class',
+	'clip',
+	'clipPathUnits',
+	'clip-rule',
+	'color',
+	'color-interpolation',
+	'color-interpolation-filters',
+	'color-profile',
+	'color-rendering',
+	'contentScriptType',
+	'contentStyleType',
+	'cursor',
+	'cx',
+	'cy',
+	'd',
+	'decelerate',
+	'descent',
+	'diffuseConstant',
+	'direction',
+	'display',
+	'divisor',
+	'dominant-baseline',
+	'dur',
+	'dx',
+	'dy',
+	'edgeMode',
+	'elevation',
+	'enable-background',
+	'end',
+	'exponent',
+	'externalResourcesRequired',
+	'fill',
+	'fill-opacity',
+	'fill-rule',
+	'filterRes',
+	'filterUnits',
+	'flood-color',
+	'flood-opacity',
+	'font-family',
+	'font-size',
+	'font-size-adjust',
+	'font-stretch',
+	'font-style',
+	'font-variant',
+	'font-weight',
+	'format',
+	'from',
+	'fr',
+	'fx',
+	'fy',
+	'g1',
+	'g2',
+	'glyph-name',
+	'glyph-orientation-horizontal',
+	'glyph-orientation-vertical',
+	'glyphRef',
+	'gradientTransform',
+	'gradientUnits',
+	'hanging',
+	'height',
+	'href',
+	'horiz-adv-x',
+	'horiz-origin-x',
+	'id',
+	'ideographic',
+	'image-rendering',
+	'in',
+	'in2',
+	'intercept',
+	'k',
+	'k1',
+	'k2',
+	'k3',
+	'k4',
+	'kernelMatrix',
+	'kernelUnitLength',
+	'kerning',
+	'keyPoints',
+	'keySplines',
+	'keyTimes',
+	'lengthAdjust',
+	'letter-spacing',
+	'lighting-color',
+	'limitingConeAngle',
+	'local',
+	'marker-end',
+	'marker-mid',
+	'marker-start',
+	'markerHeight',
+	'markerUnits',
+	'markerWidth',
+	'maskContentUnits',
+	'maskUnits',
+	'mathematical',
+	'max',
+	'media',
+	'method',
+	'min',
+	'mode',
+	'name',
+	'numOctaves',
+	'offset',
+	'opacity',
+	'operator',
+	'order',
+	'orient',
+	'orientation',
+	'origin',
+	'overflow',
+	'overline-position',
+	'overline-thickness',
+	'paint-order',
+	'pathLength',
+	'patternContentUnits',
+	'patternTransform',
+	'patternUnits',
+	'ping',
+	'pointer-events',
+	'points',
+	'pointsAtX',
+	'pointsAtY',
+	'pointsAtZ',
+	'preserveAlpha',
+	'preserveAspectRatio',
+	'primitiveUnits',
+	'r',
+	'radius',
+	'referrerPolicy',
+	'refX',
+	'refY',
+	'rendering-intent',
+	'repeatCount',
+	'repeatDur',
+	'requiredExtensions',
+	'requiredFeatures',
+	'restart',
+	'result',
+	'rotate',
+	'rx',
+	'ry',
+	'scale',
+	'seed',
+	'shape-rendering',
+	'slope',
+	'spacing',
+	'specularConstant',
+	'specularExponent',
+	'speed',
+	'spreadMethod',
+	'startOffset',
+	'stdDeviation',
+	'stemh',
+	'stemv',
+	'stitchTiles',
+	'stop-color',
+	'stop-opacity',
+	'strikethrough-position',
+	'strikethrough-thickness',
+	'string',
+	'stroke',
+	'stroke-dasharray',
+	'stroke-dashoffset',
+	'stroke-linecap',
+	'stroke-linejoin',
+	'stroke-miterlimit',
+	'stroke-opacity',
+	'stroke-width',
+	'surfaceScale',
+	'systemLanguage',
+	'tabindex',
+	'tableValues',
+	'target',
+	'targetX',
+	'targetY',
+	'text-anchor',
+	'text-decoration',
+	'text-rendering',
+	'textLength',
+	'to',
+	'transform',
+	'type',
+	'u1',
+	'u2',
+	'underline-position',
+	'underline-thickness',
+	'unicode',
+	'unicode-bidi',
+	'unicode-range',
+	'units-per-em',
+	'v-alphabetic',
+	'v-hanging',
+	'v-ideographic',
+	'v-mathematical',
+	'values',
+	'vector-effect',
+	'version',
+	'vert-adv-y',
+	'vert-origin-x',
+	'vert-origin-y',
+	'viewBox',
+	'viewTarget',
+	'visibility',
+	'width',
+	'widths',
+	'word-spacing',
+	'writing-mode',
+	'x',
+	'x-height',
+	'x1',
+	'x2',
+	'xChannelSelector',
+	'xmlns',
+	'y',
+	'y1',
+	'y2',
+	'yChannelSelector',
+	'z',
+	'zoomAndPan',
+];

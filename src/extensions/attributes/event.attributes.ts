@@ -1,5 +1,4 @@
 import { HaipaAttribute } from '../extension.type';
-import { Attribute } from '../extension.decorator';
 
 declare module '../../main/node' {
 	export interface HaipaNode {
@@ -96,95 +95,95 @@ declare module '../../main/node' {
 	}
 }
 
-class EventAttributes {
-	@Attribute() onAbort() {}
-	@Attribute() onAnimationCancel() {}
-	@Attribute() onAnimationEnd() {}
-	@Attribute() onAnimationIteration() {}
-	@Attribute() onAnimationStart() {}
-	@Attribute() onAuxClick () {}
-	@Attribute() onBlur() {}
-	@Attribute() onError() {}
-	@Attribute() onFocus() {}
-	@Attribute() onCancel() {}
-	@Attribute() onCanPlay() {}
-	@Attribute() onCanPlayThrough() {}
-	@Attribute() onChange() {}
-	@Attribute() onClick() {}
-	@Attribute() onClose() {}
-	@Attribute() onContextMenu() {}
-	@Attribute() onCueChange() {}
-	@Attribute() onDblClick() {}
-	@Attribute() onDrag() {}
-	@Attribute() onDragEnd() {}
-	@Attribute() onDragEnter() {}
-	@Attribute() onDragExit() {}
-	@Attribute() onDragLeave() {}
-	@Attribute() onDragOver() {}
-	@Attribute() onDragStart() {}
-	@Attribute() onDrop() {}
-	@Attribute() onDurationChange() {}
-	@Attribute() onEmptied() {}
-	@Attribute() onEnded() {}
-	@Attribute() onFormData() {}
-	@Attribute() onGotPointerCapture() {}
-	@Attribute() onInput() {}
-	@Attribute() onInvalid() {}
-	@Attribute() onKeyDown() {}
-	@Attribute() onKeyPress() {}
-	@Attribute() onKeyUp() {}
-	@Attribute() onLoad() {}
-	@Attribute() onLoadedData() {}
-	@Attribute() onLoadedMetaData() {}
-	@Attribute() onLoadEnd() {}
-	@Attribute() onLoadStart() {}
-	@Attribute() onLostPointerCapture() {}
-	@Attribute() onMouseDown() {}
-	@Attribute() onMouseEnter() {}
-	@Attribute() onMouseLeave() {}
-	@Attribute() onMouseMove() {}
-	@Attribute() onMouseOut() {}
-	@Attribute() onMouseOver() {}
-	@Attribute() onMouseUp() {}
-	@Attribute() onMouseWhee() {}
-	@Attribute() onWheel() {}
-	@Attribute() onPause() {}
-	@Attribute() onPlay() {}
-	@Attribute() onPlaying() {}
-	@Attribute() onPointerDown() {}
-	@Attribute() onPointerMove() {}
-	@Attribute() onPointerUp() {}
-	@Attribute() onPointerCancel() {}
-	@Attribute() onPointerOver() {}
-	@Attribute() onPointerOut() {}
-	@Attribute() onPointerEnter() {}
-	@Attribute() onPointerLeave() {}
-	@Attribute() onPointerLockchange() {}
-	@Attribute() onPointerLockerror() {}
-	@Attribute() onProgress() {}
-	@Attribute() onRateChange() {}
-	@Attribute() onReset() {}
-	@Attribute() onResize() {}
-	@Attribute() onScroll() {}
-	@Attribute() onSeeked() {}
-	@Attribute() onSeeking() {}
-	@Attribute() onSelect() {}
-	@Attribute() onSelectStart() {}
-	@Attribute() onSelectionChange() {}
-	@Attribute() onShow() {}
-	@Attribute() onSort() {}
-	@Attribute() onStalled() {}
-	@Attribute() onSubmit() {}
-	@Attribute() onSuspend() {}
-	@Attribute() onTimeUpdate() {}
-	@Attribute() onVolumeChange() {}
-	@Attribute() onTouchCancel() {}
-	@Attribute() onTouchEnd() {}
-	@Attribute() onTouchMove() {}
-	@Attribute() onTouchStart() {}
-	@Attribute() onTransitionCancel() {}
-	@Attribute() onTransitionEnd() {}
-	@Attribute() onTransitionRun() {}
-	@Attribute() onTransitionStart() {}
-	@Attribute() onWaiting() {}
-}
+export const eventAttributes = [
+	'onAbort',
+	'onAnimationCancel',
+	'onAnimationEnd',
+	'onAnimationIteration',
+	'onAnimationStart',
+	'onAuxClick ',
+	'onBlur',
+	'onError',
+	'onFocus',
+	'onCancel',
+	'onCanPlay',
+	'onCanPlayThrough',
+	'onChange',
+	'onClick',
+	'onClose',
+	'onContextMenu',
+	'onCueChange',
+	'onDblClick',
+	'onDrag',
+	'onDragEnd',
+	'onDragEnter',
+	'onDragExit',
+	'onDragLeave',
+	'onDragOver',
+	'onDragStart',
+	'onDrop',
+	'onDurationChange',
+	'onEmptied',
+	'onEnded',
+	'onFormData',
+	'onGotPointerCapture',
+	'onInput',
+	'onInvalid',
+	'onKeyDown',
+	'onKeyPress',
+	'onKeyUp',
+	'onLoad',
+	'onLoadedData',
+	'onLoadedMetaData',
+	'onLoadEnd',
+	'onLoadStart',
+	'onLostPointerCapture',
+	'onMouseDown',
+	'onMouseEnter',
+	'onMouseLeave',
+	'onMouseMove',
+	'onMouseOut',
+	'onMouseOver',
+	'onMouseUp',
+	'onMouseWhee',
+	'onWheel',
+	'onPause',
+	'onPlay',
+	'onPlaying',
+	'onPointerDown',
+	'onPointerMove',
+	'onPointerUp',
+	'onPointerCancel',
+	'onPointerOver',
+	'onPointerOut',
+	'onPointerEnter',
+	'onPointerLeave',
+	'onPointerLockchange',
+	'onPointerLockerror',
+	'onProgress',
+	'onRateChange',
+	'onReset',
+	'onResize',
+	'onScroll',
+	'onSeeked',
+	'onSeeking',
+	'onSelect',
+	'onSelectStart',
+	'onSelectionChange',
+	'onShow',
+	'onSort',
+	'onStalled',
+	'onSubmit',
+	'onSuspend',
+	'onTimeUpdate',
+	'onVolumeChange',
+	'onTouchCancel',
+	'onTouchEnd',
+	'onTouchMove',
+	'onTouchStart',
+	'onTransitionCancel',
+	'onTransitionEnd',
+	'onTransitionRun',
+	'onTransitionStart',
+	'onWaiting'
+]

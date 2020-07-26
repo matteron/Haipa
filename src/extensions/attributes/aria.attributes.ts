@@ -1,5 +1,4 @@
 import { HaipaAttribute, HaipaBooleanAttribute } from '../extension.type';
-import { Attribute } from '../extension.decorator';
 
 declare module '../../main/node' {
 	export interface HaipaNode {
@@ -52,51 +51,51 @@ declare module '../../main/node' {
 	}
 }
 
-class AriaAttributes {
-	@Attribute('aria-autoComplete') ariaAutoComplete() {}
-	@Attribute('aria-checked') ariaChecked() {}
-	@Attribute('aria-current') ariaCurrent() {}
-	@Attribute('aria-disabled') ariaDisabled() {}
-	@Attribute('aria-errorMessage') ariaErrorMessage() {}
-	@Attribute('aria-expanded') ariaExpanded() {}
-	@Attribute('aria-hasPopup') ariaHasPopup() {}
-	@Attribute('aria-hidden') ariaHidden() {}
-	@Attribute('aria-invalid') ariaInvalid() {}
-	@Attribute('aria-label') ariaLabel() {}
-	@Attribute('aria-level') ariaLevel() {}
-	@Attribute('aria-modal') ariaModal() {}
-	@Attribute('aria-multiline') ariaMultiline() {}
-	@Attribute('aria-multiSelectable') ariaMultiSelectable() {}
-	@Attribute('aria-orientation') ariaOrientation() {}
-	@Attribute('aria-placeholder') ariaPlaceholder() {}
-	@Attribute('aria-pressed') ariaPressed() {}
-	@Attribute('aria-readonly') ariaReadonly() {}
-	@Attribute('aria-required') ariaRequired() {}
-	@Attribute('aria-selected') ariaSelected() {}
-	@Attribute('aria-sort') ariaSort() {}
-	@Attribute('aria-valueMax') ariaValueMax() {}
-	@Attribute('aria-valueMin') ariaValueMin() {}
-	@Attribute('aria-valueNow') ariaValueNow() {}
-	@Attribute('aria-valueText') ariaValueText() {}
-	@Attribute('aria-live') ariaLive() {}
-	@Attribute('aria-relevant') ariaRelevant() {}
-	@Attribute('aria-atomic') ariaAtomic() {}
-	@Attribute('aria-busy') ariaBusy() {}
-	@Attribute('aria-dropEffect') ariaDropEffect() {}
-	@Attribute('aria-dragged') ariaDragged() {}
-	@Attribute('aria-activeDescendant') ariaActiveDescendant() {}
-	@Attribute('aria-colCount') ariaColCount() {}
-	@Attribute('aria-colIndex') ariaColIndex() {}
-	@Attribute('aria-colSpan') ariaColSpan() {}
-	@Attribute('aria-controls') ariaControls() {}
-	@Attribute('aria-describedBy') ariaDescribedBy() {}
-	@Attribute('aria-details') ariaDetails() {}
-	@Attribute('aria-flowTo') ariaFlowTo() {}
-	@Attribute('aria-labelledBy') ariaLabelledBy() {}
-	@Attribute('aria-owns') ariaOwns() {}
-	@Attribute('aria-posInSet') ariaPosInSet() {}
-	@Attribute('aria-rowCount') ariaRowCount() {}
-	@Attribute('aria-rowIndex') ariaRowIndex() {}
-	@Attribute('aria-rowSpan') ariaRowSpan() {}
-	@Attribute('aria-setSize') ariaSetSize() {}
-}
+export const ariaAttributes = [
+	'aria-autoComplete',
+	'aria-checked',
+	'aria-current',
+	'aria-disabled',
+	'aria-errorMessage',
+	'aria-expanded',
+	'aria-hasPopup',
+	'aria-hidden',
+	'aria-invalid',
+	'aria-label',
+	'aria-level',
+	'aria-modal',
+	'aria-multiline',
+	'aria-multiSelectable',
+	'aria-orientation',
+	'aria-placeholder',
+	'aria-pressed',
+	'aria-readonly',
+	'aria-required',
+	'aria-selected',
+	'aria-sort',
+	'aria-valueMax',
+	'aria-valueMin',
+	'aria-valueNow',
+	'aria-valueText',
+	'aria-live',
+	'aria-relevant',
+	'aria-atomic',
+	'aria-busy',
+	'aria-dropEffect',
+	'aria-dragged',
+	'aria-activeDescendant',
+	'aria-colCount',
+	'aria-colIndex',
+	'aria-colSpan',
+	'aria-controls',
+	'aria-describedBy',
+	'aria-details',
+	'aria-flowTo',
+	'aria-labelledBy',
+	'aria-owns',
+	'aria-posInSet',
+	'aria-rowCount',
+	'aria-rowIndex',
+	'aria-rowSpan',
+	'aria-setSize'
+];

@@ -1,5 +1,4 @@
 import { HaipaAttribute, HaipaBooleanAttribute } from '../extension.type';
-import { Attribute } from '../extension.decorator';
 import { LinkTypeAttribute } from '../../types/link.type';
 import { LanguageAttribute } from '../../types/language.type';
 import { DocumentEncodingAttribute } from '../../types/document-encoding.type';
@@ -124,120 +123,120 @@ declare module '../../main/node' {
 	}
 }
 
-class BaseAttributes {
-	@Attribute() accept() {}
-	@Attribute() acceptCharset() {}
-	@Attribute() accessKey() {}
-	@Attribute() action() {}
-	@Attribute() allowFullScreen() {}
-	@Attribute() allowTransparency() {}
-	@Attribute() alt() {}
-	@Attribute() as() {}
-	@Attribute() async() {}
-	@Attribute() autoComplete() {}
-	@Attribute() autoFocus() {}
-	@Attribute() autoPlay() {}
-	@Attribute() cellPadding() {}
-	@Attribute() cellSpacing() {}
-	@Attribute() challenge() {}
-	@Attribute() charset() {}
-	@Attribute() checked() {}
-	@Attribute() className() {}
-	@Attribute() cols() {}
-	@Attribute() colSpan() {}
-	@Attribute() command() {}
-	@Attribute() content() {}
-	@Attribute() contentEditable() {}
-	@Attribute() contextMenu() {}
-	@Attribute() controls() {}
-	@Attribute() coords() {}
-	@Attribute() crossOrigin() {}
-	@Attribute() dateTime() {}
-	@Attribute() default() {}
-	@Attribute() defer() {}
-	@Attribute() dir() {}
-	@Attribute() disabled() {}
-	@Attribute() download() {}
-	@Attribute() draggable() {}
-	@Attribute() dropzone() {}
-	@Attribute() encType() {}
-	@Attribute() formAction() {}
-	@Attribute() formEncType() {}
-	@Attribute() formMethod() {}
-	@Attribute() formNoValidate() {}
-	@Attribute() formTarget() {}
-	@Attribute() frameBorder() {}
-	@Attribute() headers() {}
-	@Attribute() height() {}
-	@Attribute() hidden() {}
-	@Attribute() high() {}
-	@Attribute() href() {}
-	@Attribute() hrefLang() {}
-	@Attribute() htmlFor() {}
-	@Attribute() httpEquiv() {}
-	@Attribute() icon() {}
-	@Attribute() id() {}
-	@Attribute() inputMode() {}
-	@Attribute() isMap() {}
-	@Attribute() itemId() {}
-	@Attribute() itemProp() {}
-	@Attribute() itemRef() {}
-	@Attribute() itemScope() {}
-	@Attribute() itemType() {}
-	@Attribute() kind() {}
-	@Attribute() lang() {}
-	@Attribute() list() {}
-	@Attribute() loop() {}
-	@Attribute() manifest() {}
-	@Attribute() max() {}
-	@Attribute() maxLength() {}
-	@Attribute() media() {}
-	@Attribute() mediaGroup() {}
-	@Attribute() method() {}
-	@Attribute() min() {}
-	@Attribute() minLength() {}
-	@Attribute() multiple() {}
-	@Attribute() muted() {}
-	@Attribute() name() {}
-	@Attribute() noValidate() {}
-	@Attribute() open() {}
-	@Attribute() optimum() {}
-	@Attribute() ping() {}
-	@Attribute() placeholder() {}
-	@Attribute() poster() {}
-	@Attribute() preload() {}
-	@Attribute() radioGroup() {}
-	@Attribute() readOnly() {}
-	@Attribute() rel() {}
-	@Attribute() required() {}
-	@Attribute() role() {}
-	@Attribute() rows() {}
-	@Attribute() rowSpan() {}
-	@Attribute() sandbox() {}
-	@Attribute() scope() {}
-	@Attribute() scoped() {}
-	@Attribute() scrolling() {}
-	@Attribute() seamless() {}
-	@Attribute() selected() {}
-	@Attribute() shape() {}
-	@Attribute() size() {}
-	@Attribute() sizes() {}
-	@Attribute() sortable() {}
-	@Attribute() spellCheck() {}
-	@Attribute() src() {}
-	@Attribute() srcDoc() {}
-	@Attribute() srcSet() {}
-	@Attribute() start() {}
-	@Attribute() step() {}
-	@Attribute() tabIndex() {}
-	@Attribute() target() {}
-	@Attribute() translate() {}
-	@Attribute() type() {}
-	@Attribute() typeMustMatch() {}
-	@Attribute() useMap() {}
-	@Attribute() value() {}
-	@Attribute() version() {}
-	@Attribute() width() {}
-	@Attribute() wmode() {}
-	@Attribute() wrap() {}
-}
+export const baseAttributes = [
+	'accept',
+	'acceptCharset',
+	'accessKey',
+	'action',
+	'allowFullScreen',
+	'allowTransparency',
+	'alt',
+	'as',
+	'async',
+	'autoComplete',
+	'autoFocus',
+	'autoPlay',
+	'cellPadding',
+	'cellSpacing',
+	'challenge',
+	'charset',
+	'checked',
+	'className',
+	'cols',
+	'colSpan',
+	'command',
+	'content',
+	'contentEditable',
+	'contextMenu',
+	'controls',
+	'coords',
+	'crossOrigin',
+	'dateTime',
+	'default',
+	'defer',
+	'dir',
+	'disabled',
+	'download',
+	'draggable',
+	'dropzone',
+	'encType',
+	'formAction',
+	'formEncType',
+	'formMethod',
+	'formNoValidate',
+	'formTarget',
+	'frameBorder',
+	'headers',
+	'height',
+	'hidden',
+	'high',
+	'href',
+	'hrefLang',
+	'htmlFor',
+	'httpEquiv',
+	'icon',
+	'id',
+	'inputMode',
+	'isMap',
+	'itemId',
+	'itemProp',
+	'itemRef',
+	'itemScope',
+	'itemType',
+	'kind',
+	'lang',
+	'list',
+	'loop',
+	'manifest',
+	'max',
+	'maxLength',
+	'media',
+	'mediaGroup',
+	'method',
+	'min',
+	'minLength',
+	'multiple',
+	'muted',
+	'name',
+	'noValidate',
+	'open',
+	'optimum',
+	'ping',
+	'placeholder',
+	'poster',
+	'preload',
+	'radioGroup',
+	'readOnly',
+	'rel',
+	'required',
+	'role',
+	'rows',
+	'rowSpan',
+	'sandbox',
+	'scope',
+	'scoped',
+	'scrolling',
+	'seamless',
+	'selected',
+	'shape',
+	'size',
+	'sizes',
+	'sortable',
+	'spellCheck',
+	'src',
+	'srcDoc',
+	'srcSet',
+	'start',
+	'step',
+	'tabIndex',
+	'target',
+	'translate',
+	'type',
+	'typeMustMatch',
+	'useMap',
+	'value',
+	'version',
+	'width',
+	'wmode',
+	'wrap'
+]

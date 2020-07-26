@@ -1,5 +1,4 @@
 import { HaipaElement, HaipaAttribute } from '../extension.type';
-import { Overlap } from '../extension.decorator';
 
 declare module '../../main/node' {
 	export interface HaipaNode {
@@ -18,17 +17,17 @@ declare module '../../main/node' {
 	}
 }
 
-class OverlappingComponents {
-	@Overlap() abbr() {}
-	@Overlap() cite() {}
-	@Overlap('clip-path') clipPath() {}
-	@Overlap() filter() {}
-	@Overlap() form() {}
-	@Overlap() label() {}
-	@Overlap() mask() {}
-	@Overlap() path() {}
-	@Overlap() pattern() {}
-	@Overlap() span() {}
-	@Overlap() style() {}
-	@Overlap() title() {}
-}
+export const overlappingComponents = [
+	'abbr',
+	'cite',
+	'clip-path',
+	'filter',
+	'form',
+	'label',
+	'mask',
+	'path',
+	'pattern',
+	'span',
+	'style',
+	'title'
+];

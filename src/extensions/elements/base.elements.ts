@@ -1,5 +1,4 @@
 import { HaipaElement } from '../extension.type';
-import { Element } from '../extension.decorator';
 
 declare module '../../main/node' {
 	export interface HaipaNode {
@@ -125,111 +124,114 @@ declare module '../../main/node' {
 	}
 }
 
-class BaseElements {
-	@Element() html() {}
-	@Element(true)  base() {}
-	@Element(true) link() {}
-	@Element(true) meta() {}
-	@Element() head() {}
-	@Element() body() {}
-	@Element() address() {}
-	@Element() article() {}
-	@Element() aside() {}
-	@Element() footer() {}
-	@Element() header() {}
-	@Element() h1() {}
-	@Element() h2() {}
-	@Element() h3() {}
-	@Element() h4() {}
-	@Element() h5() {}
-	@Element() h6() {}
-	@Element() hgroup() {}
-	@Element() main() {}
-	@Element() nav() {}
-	@Element() section() {}
-	@Element() blockquote() {}
-	@Element() dd() {}
-	@Element() div() {}
-	@Element() dl() {}
-	@Element() dt() {}
-	@Element() figcaption() {}
-	@Element() figure() {}
-	@Element(true) hr() {}
-	@Element() li() {}
-	@Element() ol() {}
-	@Element() p() {}
-	@Element() pre() {}
-	@Element() ul() {}
-	@Element() a() {}
-	@Element() b() {}
-	@Element() bdi() {}
-	@Element() bdo() {}
-	@Element(true) br() {}
-	@Element() code() {}
-	@Element() dfn() {}
-	@Element() em() {}
-	@Element() i() {}
-	@Element() kbd() {}
-	@Element() mark() {}
-	@Element() q() {}
-	@Element() rb() {}
-	@Element() rp() {}
-	@Element() rt() {}
-	@Element() rtc() {}
-	@Element() ruby() {}
-	@Element() s() {}
-	@Element() samp() {}
-	@Element() small() {}
-	@Element() strong() {}
-	@Element() sub() {}
-	@Element() sup() {}
-	@Element() time() {}
-	@Element() u() {}
-	@Element() var() {}
-	@Element() wbr() {}
-	@Element(true) area() {}
-	@Element() audio() {}
-	@Element(true) img() {}
-	@Element() map() {}
-	@Element(true) track() {}
-	@Element() video() {}
-	@Element(true) embed() {}
-	@Element(true) iframe() {}
-	@Element() object() {}
-	@Element(true) param() {}
-	@Element() picture() {}
-	@Element(true) source() {}
-	@Element() canvas() {}
-	@Element() noscript() {}
-	@Element() script() {}
-	@Element() del() {}
-	@Element() ins() {}
-	@Element() caption() {}
-	@Element() col() {}
-	@Element() colgroup() {}
-	@Element() table() {}
-	@Element() tbody() {}
-	@Element() td() {}
-	@Element() tfoot() {}
-	@Element() th() {}
-	@Element() thead() {}
-	@Element() tr() {}
-	@Element() button() {}
-	@Element() datalist() {}
-	@Element() fieldset() {}
-	@Element(true) input() {}
-	@Element() legend() {}
-	@Element() meter() {}
-	@Element() optgroup() {}
-	@Element() option() {}
-	@Element() output() {}
-	@Element() progress() {}
-	@Element() select() {}
-	@Element() textarea() {}
-	@Element() details() {}
-	@Element() dialog() {}
-	@Element() menu() {}
-	@Element() summary() {}
-	@Element() slot() {}
-	@Element() template() {}
-}
+export const baseElements = [
+	'html',
+	'head',
+	'body',
+	'address',
+	'article',
+	'aside',
+	'footer',
+	'header',
+	'h1',
+	'h2',
+	'h3',
+	'h4',
+	'h5',
+	'h6',
+	'hgroup',
+	'main',
+	'nav',
+	'section',
+	'blockquote',
+	'dd',
+	'div',
+	'dl',
+	'dt',
+	'figcaption',
+	'figure',
+	'li',
+	'ol',
+	'p',
+	'pre',
+	'ul',
+	'a',
+	'b',
+	'bdi',
+	'bdo',
+	'code',
+	'dfn',
+	'em',
+	'i',
+	'kbd',
+	'mark',
+	'q',
+	'rb',
+	'rp',
+	'rt',
+	'rtc',
+	'ruby',
+	's',
+	'samp',
+	'small',
+	'strong',
+	'sub',
+	'sup',
+	'time',
+	'u',
+	'var',
+	'wbr',
+	'audio',
+	'map',
+	'video',
+	'object',
+	'picture',
+	'canvas',
+	'noscript',
+	'script',
+	'del',
+	'ins',
+	'caption',
+	'col',
+	'colgroup',
+	'table',
+	'tbody',
+	'td',
+	'tfoot',
+	'th',
+	'thead',
+	'tr',
+	'button',
+	'datalist',
+	'fieldset',
+	'legend',
+	'meter',
+	'optgroup',
+	'option',
+	'output',
+	'progress',
+	'select',
+	'textarea',
+	'details',
+	'dialog',
+	'menu',
+	'summary',
+	'slot',
+	'template'
+];
+
+export const selfClosing = [
+	'base',
+	'link',
+	'meta',
+	'hr',
+	'br',
+	'area',
+	'img',
+	'track',
+	'embed',
+	'iframe',
+	'param',
+	'input',
+	'source',
+];
