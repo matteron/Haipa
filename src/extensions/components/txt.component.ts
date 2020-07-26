@@ -8,7 +8,7 @@ declare module '../../main/node' {
 	}
 }
 
-export class TxtComponent {
+class TxtComponent {
 	@HaipaExtension()
 	txt(thisArg: HaipaNode, value: string): HaipaNode {
 		const el: ElementModel = {

@@ -52,7 +52,7 @@ declare module '../../main/node' {
 	}
 }
 
-export class AriaAttributes {
+class AriaAttributes {
 	@Attribute('aria-autoComplete') ariaAutoComplete() {}
 	@Attribute('aria-checked') ariaChecked() {}
 	@Attribute('aria-current') ariaCurrent() {}

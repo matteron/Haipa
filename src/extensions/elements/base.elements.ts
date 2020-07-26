@@ -125,7 +125,7 @@ declare module '../../main/node' {
 	}
 }
 
-export class BaseElements {
+class BaseElements {
 	@Element() html() {}
 	@Element(true)  base() {}
 	@Element(true) link() {}

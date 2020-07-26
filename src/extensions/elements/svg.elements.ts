@@ -71,7 +71,7 @@ declare module '../../main/node' {
 	}
 }
 
-export class SvgElements {
+class SvgElements {
 	@Element() a() {}
 	@Element() animate() {}
 	@Element() animateMotion() {}

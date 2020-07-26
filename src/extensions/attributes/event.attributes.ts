@@ -96,7 +96,7 @@ declare module '../../main/node' {
 	}
 }
 
-export class EventAttributes {
+class EventAttributes {
 	@Attribute() onAbort() {}
 	@Attribute() onAnimationCancel() {}
 	@Attribute() onAnimationEnd() {}

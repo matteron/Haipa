@@ -12,7 +12,7 @@ declare module '../../main/node' {
 	}
 }
 
-export class DataComponent {
+class DataComponent {
 	@HaipaExtension()
 	data(thisArg: HaipaNode, key: string | HaipaNode, value?: string): HaipaNode {
 		if (typeof value === 'string') {

@@ -18,7 +18,7 @@ declare module '../../main/node' {
 	}
 }
 
-export class OverlappingComponents {
+class OverlappingComponents {
 	@Overlap() abbr() {}
 	@Overlap() cite() {}
 	@Overlap('clip-path') clipPath() {}

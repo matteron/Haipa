@@ -16,7 +16,7 @@ declare module '../../main/node' {
 	}
 }
 
-export class ShortcutComponents {
+class ShortcutComponents {
 	@HaipaExtension()
 	stylesheet(thisArg: HaipaNode, file: string): HaipaNode {
 		return thisArg.link(h()

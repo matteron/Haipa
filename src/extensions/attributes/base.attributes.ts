@@ -124,7 +124,7 @@ declare module '../../main/node' {
 	}
 }
 
-export class BaseAttributes {
+class BaseAttributes {
 	@Attribute() accept() {}
 	@Attribute() acceptCharset() {}
 	@Attribute() accessKey() {}

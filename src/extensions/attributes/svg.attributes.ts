@@ -247,7 +247,7 @@ declare module '../../main/node' {
 	}
 }
 
-export class SvgAttributes {
+class SvgAttributes {
 	@Attribute('accent-height') accentHeight() {}
 	@Attribute() accumulate() {}
 	@Attribute() additive() {}

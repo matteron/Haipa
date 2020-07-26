@@ -12,7 +12,7 @@ declare module '../../main/node' {
 	}
 }
 
-export class LogicComponents {
+class LogicComponents {
 	@HaipaExtension()
 	forEach<T>(thisArg: HaipaNode, input: T[], callback: HaipaForEachCallback<T>): HaipaNode {
 		input.forEach((val, i, arr) => callback(thisArg, val, i, arr));
