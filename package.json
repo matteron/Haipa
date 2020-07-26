@@ -1,6 +1,6 @@
 {
   "name": "haipa",
-  "version": "2.2.5",
+  "version": "3.0.0",
   "description": "",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -25,6 +25,8 @@
   },
   "homepage": "https://github.com/matteron/Haipa#readme",
   "devDependencies": {
+    "@phenomnomnominal/tsquery": "^4.1.0",
+    "@phenomnomnominal/tstemplate": "^0.1.0",
     "clipboardy": "^2.3.0",
     "typescript": "^3.8.3"
   }

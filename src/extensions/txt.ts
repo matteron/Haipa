@@ -7,6 +7,5 @@ declare module '../tag' {
 }
 
 Tag.prototype.txt = function (value: string): Tag {
-	const renderer = (_: Tag) => value;
-	return this.element('txt', undefined, renderer);
+	return this.element('txt', undefined, () => value);
 };

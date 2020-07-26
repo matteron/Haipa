@@ -1,3 +1,5 @@
+import { HaipaNode } from "../node";
+
 export type Language = | 'ab' | 'aa' | 'af' | 'ak' | 'sq' | 'am' | 'ar'
 	| 'an' | 'hy' | 'as' | 'en-au' | 'av' | 'ae' | 'ay' | 'az' | 'bm'
 	| 'ba' | 'eu' | 'be' | 'bn' | 'bh' | 'bi' | 'bs' | 'br' | 'bg'
@@ -18,3 +20,5 @@ export type Language = | 'ab' | 'aa' | 'af' | 'ak' | 'sq' | 'am' | 'ar'
 	| 'bo' | 'ti' | 'to' | 'ts' | 'tr' | 'tk' | 'tw' | 'ug' | 'en-gb'
 	| 'uk' | 'ur' | 'en-us' | 'uz' | 've' | 'vi' | 'vo' | 'wa' | 'cy'
 	| 'wo' | 'fy' | 'x-default' | 'xh' | 'yi, ji' | 'yo' | 'za' | 'zu';
+
+export type LanguageAttribute = (code: Language) => HaipaNode;

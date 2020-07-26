@@ -12,13 +12,12 @@ export class Tag implements HaipaElement {
 	};
 	renderer = renderFns.standard;
 
-	render(): string { return this.renderer(this) };
+	render(): string { return this.buffer.nodes.reduce((acc, t) => acc + (t as Tag).renderer(t as Tag), '') };
 
 	element(name: string, inner?: Tag, renderer?: (tag: Tag) => string): Tag {
 		const tag = new Tag();
 		tag.identifier = name;
 		tag.buffer = this.buffer;
-		tag.render = this.render;
 		if (inner) {
 			tag.children = inner.buffer.nodes;
 			tag.attr = inner.buffer.attr;
@@ -29,7 +28,7 @@ export class Tag implements HaipaElement {
 			tag.renderer = renderer;
 		}
 		this.buffer.nodes.push(tag);
-		return tag;
+		return this;
 	}
 
 	attribute(name: string, value: string): Tag {

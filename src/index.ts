@@ -13,3 +13,4 @@ import { Tag } from "./tag";
 
 export const h = (innerText?: string) =>
 	innerText ? new Tag().txt(innerText) : new Tag();
+	

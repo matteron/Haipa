@@ -39,18 +39,21 @@ const attr = (d) => {
 	return `Tag.prototype.${kebabToCamel(d)} = function(value: string): Tag { return this.attribute('${d}', value); }`
 }
 
-// const ariaGen = (d) => {
-// 	return `${d}: function(value: string): Tag { return Tag.prototype.attribute('aria-${d}', value); },`
-// }
+const iEl = (d) => `${d}: HaipaElement;`;
+const el = (d) => `@Element() ${d}() {}`;
+const iAt = (d) => `${kebabToCamel(d)}: HaipaAttribute;`;
+const at = (d) => `@Attribute(${d.includes('-') ? "'" + d + "'" : ''}) ${kebabToCamel(d)}() {}`;
+
+const ariaGen = (d) => `@Attribute('${d}') ${kebabToCamel(d)}() {}`
 
 const renderers = {
 	'interface': {
-		'tag': iTag,
-		'attr': iAttr
+		'tags': iEl,
+		'attr': iAt,
 	},
 	'func': {
-		'tag': tag,
-		'attr': attr
+		'tags': el,
+		'attr': at,
 	}
 };
 
@@ -78,11 +81,12 @@ const chooseData = (set, key) => {
 
 const start = () => {
 	const type = args.type ? args.type : 'func';
-	const set = args.set ? args.set : 'tag';
+	const set = args.set ? args.set : 'tags';
 	const data = args.data
 		? chooseData(set, args.data)
 		: chooseData(set, 'all')
 	const renderer = renderers[type][set];
+	console.log(type, set, args.data);
 	generic(data, renderer);
 };
 

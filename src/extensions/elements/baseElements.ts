@@ -125,7 +125,7 @@ declare module '../../tag' {
 	}
 }
 
-Tag.prototype.html = function(inner?: Tag): Tag { return this.element('html', inner, renderFns.docType); };
+Tag.prototype.html = function(inner?: Tag): Tag { return this.element('html', inner); };
 Tag.prototype.base = function(inner?: Tag): Tag { return this.element('base', inner, renderFns.selfClosing) };
 Tag.prototype.link = function(inner?: Tag): Tag { return this.element('link', inner, renderFns.selfClosing) };
 Tag.prototype.meta = function(inner?: Tag): Tag { return this.element('meta', inner, renderFns.selfClosing) };
