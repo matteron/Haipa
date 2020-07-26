@@ -1,4 +1,4 @@
-import { HaipaNode } from "../node";
+import { HaipaNode } from "../main/node";
 
 export type DocumentEncoding = 'utf-8' | string;
 

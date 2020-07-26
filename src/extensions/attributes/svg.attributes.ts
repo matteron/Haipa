@@ -2,7 +2,7 @@ import { HaipaAttribute } from '../extension.type';
 import { Attribute } from '../extension.decorator';
 import { LanguageAttribute } from '../../types/language.type';
 
-declare module '../../node' {
+declare module '../../main/node' {
 	export interface HaipaNode {
 		accentHeight: HaipaAttribute;
 		accumulate: HaipaAttribute;
@@ -138,7 +138,6 @@ declare module '../../node' {
 		overlinePosition: HaipaAttribute;
 		overlineThickness: HaipaAttribute;
 		paintOrder: HaipaAttribute;
-		// path: HaipaAttribute;
 		pathLength: HaipaAttribute;
 		patternContentUnits: HaipaAttribute;
 		patternTransform: HaipaAttribute;

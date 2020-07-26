@@ -1,10 +1,10 @@
-import { h } from '../../ndex';
+import { h } from '../..';
 import { HaipaExtension } from '../extension.decorator';
-import { HaipaNode } from '../../node';
+import { HaipaNode } from '../../main/node';
 import { DocumentEncoding } from '../../types/document-encoding.type';
 import { ViewportWidth } from '../../types/viewport-width.type';
 
-declare module '../../node' {
+declare module '../../main/node' {
 	export interface HaipaNode {
 		stylesheet(file: string): HaipaNode;
 		encoding(encoding?: DocumentEncoding): HaipaNode;

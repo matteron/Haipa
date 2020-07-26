@@ -1,4 +1,4 @@
-import { HaipaNode } from "../node";
+import { HaipaNode } from "../main/node";
 
 export type Language = | 'ab' | 'aa' | 'af' | 'ak' | 'sq' | 'am' | 'ar'
 	| 'an' | 'hy' | 'as' | 'en-au' | 'av' | 'ae' | 'ay' | 'az' | 'bm'

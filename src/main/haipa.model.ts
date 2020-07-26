@@ -1,4 +1,9 @@
-import { HaipaNode } from "../node";
+import { HaipaNode } from "./node";
+
+export interface AttributeModel {
+	name: string;
+	value: string | boolean;
+}
 
 export interface ElementModel {
 	name: string;

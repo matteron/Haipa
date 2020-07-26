@@ -1,7 +1,7 @@
 import { HaipaElement } from '../extension.type';
 import { Element } from '../extension.decorator';
 
-declare module '../../node' {
+declare module '../../main/node' {
 	export interface HaipaNode {
 		html: HaipaElement;
 		/// Document MetaData
@@ -165,7 +165,6 @@ export class BaseElements {
 	@Element() bdi() {}
 	@Element() bdo() {}
 	@Element(true) br() {}
-	@Element() cite() {}
 	@Element() code() {}
 	@Element() dfn() {}
 	@Element() em() {}

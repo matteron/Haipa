@@ -1,7 +1,7 @@
 import { HaipaExtension } from '../extension.decorator';
-import { HaipaNode, HaipaForEachCallback, HaipaIfBranch } from '../../node';
+import { HaipaNode, HaipaForEachCallback, HaipaIfBranch } from '../../main/node';
 
-declare module '../../node' {
+declare module '../../main/node' {
 
 	type HaipaForEachCallback<T> = (node: HaipaNode, value: T, index: number, array: T[]) => void;
 	type HaipaIfBranch = (node: HaipaNode) => void;

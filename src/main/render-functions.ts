@@ -1,5 +1,5 @@
-import { AttributeModel } from "./models/attribute.model";
-import { ElementModel } from "./models/element.model";
+import { AttributeModel, ElementModel } from "./haipa.model";
+
 
 function renderAttribute(attribute: AttributeModel): string {
 	return typeof attribute.value === 'boolean'

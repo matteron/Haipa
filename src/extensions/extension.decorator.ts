@@ -1,6 +1,5 @@
-import { HaipaNode } from "../node";
-import { ElementModel } from "../models/element.model";
-import { AttributeModel } from "../models/attribute.model";
+import { HaipaNode } from "../main/node";
+import { ElementModel, AttributeModel } from "../main/haipa.model";
 
 export function Element(selfClosing?: boolean) {
 	const ctr: (new () => HaipaNode) = HaipaNode;

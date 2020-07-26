@@ -1,7 +1,7 @@
 import { HaipaElement, HaipaAttribute } from '../extension.type';
 import { Overlap } from '../extension.decorator';
 
-declare module '../../node' {
+declare module '../../main/node' {
 	export interface HaipaNode {
 		abbr: HaipaElement | HaipaAttribute;
 		cite: HaipaElement | HaipaAttribute;

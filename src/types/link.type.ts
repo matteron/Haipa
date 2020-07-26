@@ -1,4 +1,4 @@
-import { HaipaNode } from "../node";
+import { HaipaNode } from "../main/node";
 
 export type LinkType = 'alternate' | 'archives' | 'author' | 'bookmark'
 	| 'canonical' | 'dns-prefetch' | 'external' | 'first' | 'help' | 'icon'

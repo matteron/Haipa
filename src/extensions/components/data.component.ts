@@ -1,10 +1,9 @@
 import { HaipaElement, HaipaAttribute } from '../extension.type';
 import { HaipaExtension } from '../extension.decorator';
-import { HaipaNode } from '../../node';
-import { ElementModel } from '../../models/element.model';
-import { AttributeModel } from '../../models/attribute.model';
+import { HaipaNode } from '../../main/node';
+import { AttributeModel, ElementModel } from '../../main/haipa.model';
 
-declare module '../../node' {
+declare module '../../main/node' {
 
 	type DataAttribute = (key: string, value: string) => HaipaNode;
 

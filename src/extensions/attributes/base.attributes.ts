@@ -4,7 +4,7 @@ import { LinkTypeAttribute } from '../../types/link.type';
 import { LanguageAttribute } from '../../types/language.type';
 import { DocumentEncodingAttribute } from '../../types/document-encoding.type';
 
-declare module '../../node' {
+declare module '../../main/node' {
 	export interface HaipaNode {
 		accept: HaipaAttribute;
 		acceptCharset: HaipaAttribute;

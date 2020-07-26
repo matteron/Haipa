@@ -1,8 +1,8 @@
 import { HaipaExtension } from '../extension.decorator';
-import { HaipaNode } from '../../node';
-import { ElementModel } from '../../models/element.model';
+import { HaipaNode } from '../../main/node';
+import { ElementModel } from '../../main/haipa.model';
 
-declare module '../../node' {
+declare module '../../main/node' {
 	export interface HaipaNode {
 		txt: (value: string) => HaipaNode;
 	}

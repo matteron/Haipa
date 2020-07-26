@@ -1,7 +1,7 @@
 import { HaipaAttribute } from '../extension.type';
 import { Attribute } from '../extension.decorator';
 
-declare module '../../node' {
+declare module '../../main/node' {
 	export interface HaipaNode {
 		onAbort: HaipaAttribute;
 		onAnimationCancel: HaipaAttribute;

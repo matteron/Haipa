@@ -1,7 +1,7 @@
 import { HaipaElement } from '../extension.type';
 import { Element } from '../extension.decorator';
 
-declare module '../../node' {
+declare module '../../main/node' {
 	export interface HaipaNode {
 		a: HaipaElement;
 		animate: HaipaElement;

@@ -1,6 +1,5 @@
-import { ElementModel } from "./models/element.model";
-import { AttributeModel } from "./models/attribute.model";
 import { renderElements } from "./render-functions";
+import { ElementModel, AttributeModel } from "./haipa.model";
 
 export class HaipaNode {
 	elements: ElementModel[] = [];
