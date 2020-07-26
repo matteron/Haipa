@@ -4,14 +4,14 @@ Haipa is a quick little project to make writing HTML templates a bit faster and 
 
 I'm sure something like this has been done before, I just couldn't find it.
 
-It's designed to be used with with static site generators, not at all to be used in live DOM operations.  Please do not try and use this for live DOM operations and then complain it does a bad job at that.
+It's designed to be used with static site generators, not at all to be used in live DOM operations.  Please do not try and use this for live DOM operations and then complain it does a bad job at that.
 
 ## Syntax 
-Note: Haipa syntax is very different now in version 2, if you somehow were using haipa for anything (why?), be aware of this.  You can read about it [below](#Complete-Rewrite).
+Note: Haipa syntax change heavily after version 2, if you somehow were using haipa for anything (really?), be aware of this.  You can read about it [below](#Complete-Rewrite).
 
 ### Basic Example
 ```JavaScript
-const temp = h().html(h()
+const temp = h().doctype().html(h()
 	.head(h()
 		.title(h('Hello World'))
 	)
@@ -55,10 +55,10 @@ Elements are typically tags which optionally take another haipa node as a parame
 ```
 
 ### Attributes
-Attributes are simpler functions that just take strings.
+Attributes are simpler functions that just take strings for regular `name="value"` attributes or booleans for boolean attributes, such as `disabled`.
 
 ```JavaScript
-.attributeName(string)
+.attributeName(string | boolean)
 ```
 
 As you can see in the [basic example](#Basic-Example), calling attribute functions like 'id' on a haipa node will pass that attribute onto the parent.
@@ -103,18 +103,19 @@ Produces the following:
 	</div>
 ```
 
-### Components
-For haipa 2, I've also included a few commonly used patterns when building an HTML document.
+### Shortcuts
+In haipa 2+, I've also included a few commonly used patterns when building an HTML document.
 
-For example there is `.stylesheet(href)` which is shortcut for linking a stylesheet without having to write the typical link with attribute syntax.
+For example there is `.stylesheet(href)` which is component for that generates the typical `link` tag structure for including stylesheets.
 
-You can see all of the ones I've made so far [here](https://github.com/matteron/Haipa/blob/master/src/extensions/components.ts)
+You can see all of the ones I've made so far [here](https://github.com/matteron/Haipa/blob/master/src/extensions/components/shortcut.components.ts).
 
-### Loops
-I found that I kept making extensions to loop through lists of items, so I finally got fed up and added them to haipa.  The basic syntax is the following:
+### Logic
+Haipa 2+ also include basic logical components for conditionals and loops in the form of an `if` and `forEach` respectively.
 
-```JavaScript
-h().forEach(array, (tag, value, index, array) => {})
+#### ForEach Component
+```TypeScript
+forEach<T>(input: T[], callback: (node: HaipaNode, value: T, index: number, array: T[]) => void): HaipaNode;
 ```
 
 It's fairly similar to the native `Array.forEach` function, except that the first argument is the array you wish to loop through and the first parameter passed into the callback function is the tag, not the value.  The tag is the same tag which you called the `forEach` function on, so you do all your modifications on the tag.  I think a simple example explains everything far better than I can, so here ya go:
@@ -127,15 +128,29 @@ h().ul(h()
 );
 ```
 
-### Enums / Types
-Finally, since I was using TypeScript for this library, I figured i'd leverage enums and custom types to aid in "type safety" so to speak.  Certain functions will take these enums instead of typical strings when using TypeScript files.  If you are using JavaScript, you can just as easily pass the string representation instead.
+#### If Component
+```TypeScript
+if(condition: boolean, thenBranch: (node: HaipaNode) => void, elseBranch?: (node: HaipaNode) => void): HaipaNode;
+```
 
-For a very basic example, there is the `.encoding(DocumentEncoding)` attribute which takes the `DocumentEncoding` enum.
+the if component is very similar to typically conditional statements.  You pass in a boolean, then specify what actions you want performed on the node.  Optionally you can specify an else branch with the same syntax.  For an example:
 
-All of the enums / types are available to view [here](https://github.com/matteron/Haipa/tree/master/src/enums).
+```JavaScript
+h().if(data.isImportantTitle,
+	t => t.h1(h(data.title)),
+	f => f.h3(h(data.title))
+);
+```
+
+### Attribute Types
+Finally, since I was using TypeScript for this library, I figured i'd leverage custom types to aid in "type safety" so to speak.  Certain attributes will take these types instead of typical strings when using TypeScript files.  If you are using JavaScript, you can just as easily pass the string representation instead.
+
+For a very basic example, there is the `.encoding(DocumentEncoding)` attribute which takes the `DocumentEncoding` type.
+
+All of the data types are available to view [here](https://github.com/matteron/Haipa/tree/master/src/types).
 
 ### Kebab Case
-As mentioned in the [attributes section](#Attributes), kebab case attributes such as `stroke-width` become strokeWidth.
+As mentioned in the [attributes section](#Attributes), kebab case attributes such as `stroke-width` become `strokeWidth`.
 
 ## Complete Rewrite
 
@@ -173,10 +188,5 @@ const temp = h().html(h()
 
 In this example, we create a very basic html document, with a body that has the id, 'test', and an internal div child.  The order actually doesn't matter either, putting the div before the id call will still result in the same structure (Order of child tags is still preserved).  However, that's mainly an accidental result of implementation and I don't think it should typically used.
 
-## TODO
-- [ ] Handle boolean attributes correctly (disabled, etc)
-- [ ] Add enums / correct types for everything to match html spec (big for svg)
-- [ ] Add more components for common situations.
-- [ ] Correctly space the resulting string with tabs.
-- [x] ~~I might switch text only elements to taking strings directly instead of having to call `.txt()`.  (Ex: p, b)~~ Passing a string into a `h()` call will make it call `.txt()` on itself.
-- [ ] Figure out how to move all the aria attributes into an aria sub property to keep things clean.
+### Casual 3.0 Update
+Haipa has been completely rewritten again in version 3.0.  This time the syntax remains the same, but the implementation is has been cleaned up and allows for a few features I've meant to square away for a while.  Also I managed to almost halve the library size using some typescript decorator tricks.

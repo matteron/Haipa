@@ -8,6 +8,7 @@
 	- Logic is a lot simpler and more straight forward. (No more bugs)
 - New `@HaipaExtension()` decorator for typescript users.  Simplifies syntax to create extensions.
 - New link type for use with the `rel` attribute.
+- Properly handle boolean attributes now.  Ex: `.disabled(false)` won't render now.
 - Fixed bug where the outermost node would only output render the last element.
 - Extensions should now be made against `HaipaNode` type instead of `Tag`.
 
