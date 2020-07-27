@@ -1,12 +1,10 @@
 {
   "name": "haipa",
-  "version": "3.0.0",
-  "description": "",
+  "version": "3.0.1",
+  "description": "Html templating JavaScript library",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "files": [
-    "lib"
-  ],
+  "files": [ "lib" ],
   "scripts": {
     "test": "node ./test.js",
     "build": "tsc",
@@ -17,7 +15,7 @@
     "type": "git",
     "url": "git+https://github.com/matteron/Haipa.git"
   },
-  "keywords": [],
+  "keywords": [ "template", "templating", "html" ],
   "author": "Mattia",
   "license": "ISC",
   "bugs": {
@@ -25,8 +23,6 @@
   },
   "homepage": "https://github.com/matteron/Haipa#readme",
   "devDependencies": {
-    "@phenomnomnominal/tsquery": "^4.1.0",
-    "@phenomnomnominal/tstemplate": "^0.1.0",
     "clipboardy": "^2.3.0",
     "typescript": "^3.8.3"
   }
