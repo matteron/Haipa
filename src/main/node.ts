@@ -15,13 +15,6 @@ export class HaipaNode {
 		return this;
 	}
 
-	overlap(val: ElementModel | AttributeModel): HaipaNode {
-		'value' in val
-			? this.attributes.push(val)
-			: this.elements.push(val);
-		return this;
-	}
-
 	render(): string {
 		return renderElements(this.elements);
 	}

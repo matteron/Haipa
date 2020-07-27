@@ -1,6 +1,7 @@
 import { HaipaExtension } from '../extension.decorator';
 import { HaipaNode } from '../../main/node';
 import { ElementModel } from '../../main/haipa.model';
+import { h } from '../..';
 
 declare module '../../main/node' {
 	export interface HaipaNode {
@@ -13,7 +14,7 @@ class TxtComponent {
 	txt(thisArg: HaipaNode, value: string): HaipaNode {
 		const el: ElementModel = {
 			name: 'txt',
-			render: () => value,
+			content: h().value(value)
 		}
 		return thisArg.element(el);
 	}

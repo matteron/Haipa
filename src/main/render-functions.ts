@@ -12,7 +12,7 @@ function renderAttributes(element: ElementModel): string {
 }
 
 function renderElement(element: ElementModel): string {
-	if (element.render) { return element.render(); }
+	if (element.name === 'txt') { return element.content?.attributes[0].value as string }
 	const start = `<${element.name}${renderAttributes(element)}`;
 	return element.selfClosing
 		? `${start}/>`
