@@ -17,7 +17,7 @@
   },
   "keywords": [ "template", "templating", "html" ],
   "author": "Mattia",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/matteron/Haipa/issues"
   },
