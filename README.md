@@ -1,10 +1,15 @@
 # Haipa (ハイパー)
+[![npm](https://img.shields.io/npm/v/haipa)](https://www.npmjs.com/package/haipa)
 
 Haipa is a quick little project to make writing HTML templates a bit faster and less painful.
 
 I'm sure something like this has been done before, I just couldn't find it.
 
 It's designed to be used with static site generators, not at all to be used in live DOM operations.  Please do not try and use this for live DOM operations and then complain it does a bad job at that.
+
+```Bash
+npm i haipa
+```
 
 ## Basic Syntax
 ```JavaScript
